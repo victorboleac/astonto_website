@@ -3,7 +3,8 @@
   --ink: #0B1D3A;
   --ink-soft: rgba(11, 29, 58, 0.72);
   --cyan: #00C2E0;
-  --gray: #8A8F98;
+  --cyan-text: #00707F;
+  --gray: #5C636D;
   --rule: rgba(11, 29, 58, 0.14);
   --max: 1080px;
 }
@@ -323,7 +324,7 @@ section {
 }
 
 .specimen-note b {
-  color: var(--cyan);
+  color: var(--cyan-text);
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
   font-size: 0.78rem;
@@ -413,7 +414,7 @@ section {
 
 .data-cell .stat i {
   font-style: normal;
-  color: var(--cyan);
+  color: var(--cyan-text);
 }
 
 .data-cell p {
@@ -535,7 +536,7 @@ section {
   font-size: 0.66rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--cyan-text);
   display: block;
   margin-bottom: 10px;
 }
