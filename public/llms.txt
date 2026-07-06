@@ -1,0 +1,22 @@
+# ASTONTO
+
+> ASTONTO is an AI Search Optimization (AISO) agency for US real estate agents and teams. It researches how AI platforms (ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, Google AI Overviews) recommend real estate agents, quantifies each agent's visibility with a proprietary AVI™ score, and closes visibility gaps using the PRISM™ five-phase framework. Operated by ASTONTO LTD (UK Company No. 17320644). Active market: Miami, FL. Expanding across the US market by market.
+
+Key facts:
+- Core finding: roughly 9 in 10 of Miami's top-producing agents (by verified volume) do not appear in any AI platform recommendation. AI platforms reward ranking pages, data content, and citations — not closing volume.
+- Method: live query testing (15+ query types per segment) across 7 AI platforms, cross-referenced against a 95-agent ground-truth list built from RealTrends and Zillow Agent Finder.
+- Frameworks: PRISM™ (Profile → Reverse → Intervene → Signal → Monitor) for delivery; AVI™ (AI Visibility Index, 0–100, scored on Presence, Position, Sentiment, Context).
+- Services and pricing: AI Visibility Audit $500 one-time (fully credited toward a sprint); Visibility Sprint $1,500/month; Luxury & Team Sprint $2,500/month; Ongoing Monitoring $600/month. No performance-based pricing.
+- Founder: Victor Boleac — CS Master's, University of Colorado Boulder; former ML systems builder.
+- Contact: hello@astonto.com · +1 (786) 927-6004 · https://astonto.com
+
+## Sections
+
+- [Research findings](https://astonto.com/#research): Miami Round 1 data — segment consolidation, platform behavior differences, the visibility gap.
+- [Method](https://astonto.com/#method): PRISM™ framework and AVI™ scoring explained.
+- [Pricing](https://astonto.com/#pricing): audit, sprint tiers, and monitoring.
+- [About](https://astonto.com/#about): the founding thesis and who runs ASTONTO.
+
+## Optional
+
+- [Full details](https://astonto.com/llms-full.txt): complete service, methodology, and research documentation.

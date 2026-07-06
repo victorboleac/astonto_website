@@ -14,19 +14,88 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ASTONTO",
-  "legalName": "ASTONTO LTD",
-  "url": "https://astonto.com",
-  "telephone": "+17869276004",
-  "email": "hello@astonto.com",
-  "description": "AI Search Optimization for US real estate agents. Active market: Miami, FL.",
-  "founder": {
-    "@type": "Person",
-    "name": "Victor",
-    "sameAs": "https://www.linkedin.com/in/victorboleac/"
-  },
-  "sameAs": ["https://www.linkedin.com/in/victorboleac/"]
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://astonto.com/#organization",
+      "name": "ASTONTO",
+      "legalName": "ASTONTO LTD",
+      "url": "https://astonto.com",
+      "email": "hello@astonto.com",
+      "telephone": "+17869276004",
+      "priceRange": "$500–$2,500",
+      "description": "AI Search Optimization for US real estate agents. ASTONTO researches how AI platforms recommend agents, scores visibility with a proprietary AVI index, and closes the gaps. Active market: Miami, FL.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Miami",
+        "containedInPlace": { "@type": "State", "name": "Florida" }
+      },
+      "knowsAbout": [
+        "AI Search Optimization",
+        "AI visibility for real estate agents",
+        "Generative engine optimization"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Victor Boleac",
+        "alumniOf": "University of Colorado Boulder",
+        "sameAs": "https://www.linkedin.com/in/victorboleac/"
+      },
+      "sameAs": ["https://www.linkedin.com/in/victorboleac/"],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Visibility Audit" }, "price": "500", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Visibility Sprint (monthly)" }, "price": "1500", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury & Team Sprint (monthly)" }, "price": "2500", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ongoing Monitoring (monthly)" }, "price": "600", "priceCurrency": "USD" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://astonto.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AI Search Optimization (AISO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Search Optimization is the practice of improving how AI platforms — like ChatGPT, Gemini, Perplexity, and Google AI Overviews — describe and recommend a business. Unlike traditional SEO, it works on the structure, credentials, and third-party citations these platforms read, rather than search rankings or ad spend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are top-producing real estate agents often invisible in AI search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI platforms don't see sales volume. They read market reports, ranking pages, data platforms, and guide content. Agents who built those signals get recommended; high-volume agents who didn't are often absent, regardless of their production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is AISO the same as SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Search rankings, backlinks, and ad spend don't determine who AI platforms recommend. AISO targets the signals those platforms actually use to answer questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does ASTONTO cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ASTONTO starts with a $500 AI Visibility Audit, fully credited toward a sprint. Monthly sprints run $1,500 for individual producers and $2,500 for luxury specialists and teams, with ongoing monitoring at $600 per month. There is no performance-based pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can ASTONTO guarantee an AI platform will recommend an agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No one can control AI outputs, and ASTONTO doesn't claim to. It measures visibility precisely with an AVI score, engineers the signals that correlate with being recommended, and reports movement monthly."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>

@@ -1,0 +1,75 @@
+# ASTONTO — Complete Documentation
+
+Last updated: July 2026
+
+## What ASTONTO is
+
+ASTONTO is an AI Search Optimization (AISO) agency serving US real estate agents and teams. Home buyers, relocating executives, international buyers, and property investors increasingly ask AI platforms — ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, and Google AI Overviews — which agent to work with. These platforms answer with two or three names. ASTONTO's work is making sure its clients are among those names.
+
+ASTONTO operates market by market: no city receives client services before it has been fully researched. The active market is Miami, FL (research complete, accepting clients). Additional Florida markets are in research; further US markets are queued.
+
+Operating entity: ASTONTO LTD, Company No. 17320644, registered in England and Wales.
+Contact: hello@astonto.com · +1 (786) 927-6004 · https://astonto.com
+Founder: Victor Boleac — CS Master's (University of Colorado Boulder), former machine-learning systems builder. LinkedIn: https://www.linkedin.com/in/victorboleac/
+
+## The founding research finding
+
+The top-producing real estate agents by verified sales volume are usually invisible in AI search. In ASTONTO's Miami Round 1 research, roughly 91% of top producers did not appear in a single AI recommendation across seven platforms. AI platforms do not see closings; they see market reports, ranking pages, data platforms, credential labels, and guide content. Agents who built those signals get recommended regardless of volume; agents who did not are invisible regardless of volume.
+
+Additional Round 1 findings (Miami):
+- The luxury/waterfront segment is highly consolidated: a small group of names absorbs nearly all luxury-intent queries across platforms.
+- The international/relocation segment is open: no agent dominates it across platforms. Specialty positioning (buyer-origin, credential, and process expertise such as foreign-buyer tax and documentation guidance) determines visibility.
+- The investment/condo segment splits into two lanes: broad investment queries (dominated by agents with proprietary data-content platforms) and short-term-rental/Airbnb queries (an open field with a distinct citation ecosystem).
+- Each AI platform behaves differently. The signals that earn a recommendation on one platform can do nothing on another; one platform in particular rewards explicit credential labeling and surfaces a distinct roster of agents.
+- Specialty query framings (by credential, buyer type, or neighborhood) surface different agents than generic "best agent in [city]" queries, and are significantly easier to win.
+
+## Methodology
+
+### Research protocol (per market)
+1. Build a ground-truth list of the market's verified top producers from RealTrends Verified rankings and Zillow Agent Finder (Miami: 95 agents).
+2. Run live queries — 15+ query intent types per segment — across all 7 AI platforms.
+3. Score every agent appearance into a market Agent Matrix.
+4. Cross-reference the Agent Matrix against the ground-truth production rankings to quantify the visibility gap.
+
+### AVI™ — AI Visibility Index
+A 0–100 score for each agent, measured across four dimensions:
+- Presence: does the agent appear at all, and on how many platforms?
+- Position: where in the answer does the agent appear?
+- Sentiment: how is the agent characterized?
+- Context: for which query intents and specialties is the agent surfaced?
+
+### PRISM™ — service delivery framework
+1. Profile — map exactly where the client appears (and doesn't) across all 7 platforms, query by query.
+2. Reverse — reverse-engineer why the platforms recommend who they currently recommend in the client's segment.
+3. Intervene — fix structural gaps: how the client's expertise, credentials, and specialties are described in the sources AI reads.
+4. Signal — build the citations and third-party presence AI platforms treat as ground truth.
+5. Monitor — track visibility monthly, because AI answers shift.
+
+## Services and pricing (USD)
+
+- AI Visibility Audit — $500 one-time. The client's current standing across all 7 platforms, scored against direct competitors, with an AVI™ baseline. 100% credited toward any sprint.
+- Visibility Sprint — $1,500/month. Full PRISM™ execution for individual producers; built for investment/condo and relocation-segment agents.
+- Luxury & Team Sprint — $2,500/month. For waterfront-luxury specialists and teams: deeper query coverage, competitive displacement work, team-level entity building.
+- Ongoing Monitoring — $600/month. Monthly AVI™ reporting, drift alerts, and maintenance after a sprint.
+
+ASTONTO does not offer performance-based or outcome-based pricing. Clients see the same data ASTONTO sees.
+
+## Who ASTONTO is for
+
+- Real estate agents and teams in ASTONTO's active markets (currently Miami, FL) in three segments: luxury/waterfront, international/relocation, and investment/condo.
+- Agents in not-yet-opened US markets can register interest; research-stage markets receive founding-client rates.
+
+## Frequently relevant questions
+
+Q: Is this SEO?
+A: No. Search-engine rankings, backlinks, and ad spend do not determine who AI platforms recommend. AISO works on the structure, citations, and consistent third-party signals those platforms actually read.
+
+Q: Can ASTONTO guarantee AI platforms will recommend an agent?
+A: No one can control AI outputs, and ASTONTO does not claim to. It measures visibility precisely (AVI™), engineers the signals that correlate with recommendation, and reports movement monthly. If a segment is too consolidated to win, ASTONTO says so before taking the engagement.
+
+Q: How is ASTONTO different from a marketing agency?
+A: It is a research operation first. Every recommendation traces to live platform test data for the client's specific market and segment — not templates or generic industry statistics.
+
+## Trademarks and legal
+
+PRISM™ and AVI™ are trademarks of ASTONTO LTD. © 2026 ASTONTO LTD, Company No. 17320644, registered in England and Wales.
