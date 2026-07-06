@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Production Build
+dist/
+
+# Local Netlify Folder
+.netlify/
+
+# OS Files
+.DS_Store
+Thumbs.db
