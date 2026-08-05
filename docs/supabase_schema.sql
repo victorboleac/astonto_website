@@ -110,3 +110,14 @@ CREATE POLICY "Allow authenticated write on pricing_tiers" ON pricing_tiers FOR 
 CREATE POLICY "Allow authenticated write on faqs" ON faqs FOR ALL USING (auth.role() = 'authenticated') WITH CHECK (auth.role() = 'authenticated');
 CREATE POLICY "Allow authenticated write on content_articles" ON content_articles FOR ALL USING (auth.role() = 'authenticated') WITH CHECK (auth.role() = 'authenticated');
 
+-- 3. Storage Bucket Configuration for Article Images
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('article-images', 'article-images', true)
+ON CONFLICT (id) DO NOTHING;
+
+DROP POLICY IF EXISTS "Public Read Article Images" ON storage.objects;
+DROP POLICY IF EXISTS "Allow All Storage Access" ON storage.objects;
+CREATE POLICY "Public Read Article Images" ON storage.objects FOR SELECT USING (bucket_id = 'article-images');
+CREATE POLICY "Allow All Storage Access" ON storage.objects FOR ALL USING (bucket_id = 'article-images') WITH CHECK (bucket_id = 'article-images');
+
+

@@ -10,7 +10,8 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
-    "generate-llms": "tsx scripts/generate-llms-full.ts"
+    "generate-llms": "tsx scripts/generate-llms-full.ts",
+    "submit-indexnow": "tsx scripts/submit-indexnow.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
