@@ -1,8 +1,11 @@
 # Dependencies
 node_modules/
 
-# Production Build
+# Next.js Build & Export
+.next/
+out/
 dist/
+tsconfig.tsbuildinfo
 
 # Local Netlify Folder
 .netlify/
@@ -10,3 +13,7 @@ dist/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Documentation & Prompt Markdown Files (content/ directory retained for build operationality)
+*.md
+!content/**/*.md

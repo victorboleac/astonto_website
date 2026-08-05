@@ -1,75 +1,211 @@
-# ASTONTO — Complete Documentation
+# ASTONTO — Consolidated AI Discovery Documentation
 
-Last updated: July 2026
+*Generated at: 2026-08-05T12:33:07.820Z*
+*Canonical Site URL: https://astonto.com*
 
-## What ASTONTO is
+---
 
-ASTONTO is an AI Search Optimization (AISO) agency serving US real estate agents and teams. Home buyers, relocating executives, international buyers, and property investors increasingly ask AI platforms — ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, and Google AI Overviews — which agent to work with. These platforms answer with two or three names. ASTONTO's work is making sure its clients are among those names.
+## 1. Company Overview
 
-ASTONTO operates market by market: no city receives client services before it has been fully researched. The active market is Miami, FL (research complete, accepting clients). Additional Florida markets are in research; further US markets are queued.
+Independent AI research company studying the observable behaviour of large language models and AI recommendation systems. Creator of AnswerSignal.
 
-Operating entity: ASTONTO LTD, Company No. 17320644, registered in England and Wales.
-Contact: hello@astonto.com · +1 (786) 927-6004 · https://astonto.com
-Founder: Victor Boleac — CS Master's (University of Colorado Boulder), former machine-learning systems builder. LinkedIn: https://www.linkedin.com/in/victorboleac/
+ASTONTO studies the observable behaviour of large language models and AI recommendation systems through controlled black-box evaluation of publicly accessible outputs across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
 
-## The founding research finding
+Address: 66 Paul Street, London, EC2A 4NA, England
+Telephone: +44 7845 580266
+LinkedIn: https://www.linkedin.com/company/astonto/
 
-The top-producing real estate agents by verified sales volume are usually invisible in AI search. In ASTONTO's Miami Round 1 research, roughly 91% of top producers did not appear in a single AI recommendation across seven platforms. AI platforms do not see closings; they see market reports, ranking pages, data platforms, credential labels, and guide content. Agents who built those signals get recommended regardless of volume; agents who did not are invisible regardless of volume.
+---
 
-Additional Round 1 findings (Miami):
-- The luxury/waterfront segment is highly consolidated: a small group of names absorbs nearly all luxury-intent queries across platforms.
-- The international/relocation segment is open: no agent dominates it across platforms. Specialty positioning (buyer-origin, credential, and process expertise such as foreign-buyer tax and documentation guidance) determines visibility.
-- The investment/condo segment splits into two lanes: broad investment queries (dominated by agents with proprietary data-content platforms) and short-term-rental/Airbnb queries (an open field with a distinct citation ecosystem).
-- Each AI platform behaves differently. The signals that earn a recommendation on one platform can do nothing on another; one platform in particular rewards explicit credential labeling and surfaces a distinct roster of agents.
-- Specialty query framings (by credential, buyer type, or neighborhood) surface different agents than generic "best agent in [city]" queries, and are significantly easier to win.
+## 2. AnswerSignal Product & Methodology
 
-## Methodology
+AnswerSignal is ASTONTO's applied AI Search Visibility service. It measures how AI platforms recommend a company compared with four selected competitors using the PULSE Method v1.0.
 
-### Research protocol (per market)
-1. Build a ground-truth list of the market's verified top producers from RealTrends Verified rankings and Zillow Agent Finder (Miami: 95 agents).
-2. Run live queries — 15+ query intent types per segment — across all 7 AI platforms.
-3. Score every agent appearance into a market Agent Matrix.
-4. Cross-reference the Agent Matrix against the ground-truth production rankings to quantify the visibility gap.
+Core Formula:
+Prompt Result Score = Position Factor × Recommendation Factor × Sentiment Factor
 
-### AVI™ — AI Visibility Index
-A 0–100 score for each agent, measured across four dimensions:
-- Presence: does the agent appear at all, and on how many platforms?
-- Position: where in the answer does the agent appear?
-- Sentiment: how is the agent characterized?
-- Context: for which query intents and specialties is the agent surfaced?
+Reliability Levels: High, Medium, Indicative.
 
-### PRISM™ — service delivery framework
-1. Profile — map exactly where the client appears (and doesn't) across all 7 platforms, query by query.
-2. Reverse — reverse-engineer why the platforms recommend who they currently recommend in the client's segment.
-3. Intervene — fix structural gaps: how the client's expertise, credentials, and specialties are described in the sources AI reads.
-4. Signal — build the citations and third-party presence AI platforms treat as ground truth.
-5. Monitor — track visibility monthly, because AI answers shift.
+---
 
-## Services and pricing (USD)
+## 3. Official Services & Public Pricing Structure
 
-- AI Visibility Audit — $500 one-time. The client's current standing across all 7 platforms, scored against direct competitors, with an AVI™ baseline. 100% credited toward any sprint.
-- Visibility Sprint — $1,500/month. Full PRISM™ execution for individual producers; built for investment/condo and relocation-segment agents.
-- Luxury & Team Sprint — $2,500/month. For waterfront-luxury specialists and teams: deeper query coverage, competitive displacement work, team-level entity building.
-- Ongoing Monitoring — $600/month. Monthly AVI™ reporting, drift alerts, and maintenance after a sprint.
+- 20-Minute AI Visibility Check: Free
+- 24-Hour AI Visibility Audit: £950 + VAT (fixed fee)
+- 90-Day AI Visibility Optimisation Sprint: £6,000 + VAT (or three monthly payments of £2,000 + VAT)
+- AI Visibility Monitoring: From £350 + VAT (per month)
 
-ASTONTO does not offer performance-based or outcome-based pricing. Clients see the same data ASTONTO sees.
+---
 
-## Who ASTONTO is for
+## 4. Approved FAQ Knowledge Base
 
-- Real estate agents and teams in ASTONTO's active markets (currently Miami, FL) in three segments: luxury/waterfront, international/relocation, and investment/condo.
-- Agents in not-yet-opened US markets can register interest; research-stage markets receive founding-client rates.
 
-## Frequently relevant questions
+### Q1: What is ASTONTO?
+Category: ASTONTO
+Answer: ASTONTO is an independent AI research company that studies the observable behaviour of large language models and AI recommendation systems.
 
-Q: Is this SEO?
-A: No. Search-engine rankings, backlinks, and ad spend do not determine who AI platforms recommend. AISO works on the structure, citations, and consistent third-party signals those platforms actually read.
 
-Q: Can ASTONTO guarantee AI platforms will recommend an agent?
-A: No one can control AI outputs, and ASTONTO does not claim to. It measures visibility precisely (AVI™), engineers the signals that correlate with recommendation, and reports movement monthly. If a segment is too consolidated to win, ASTONTO says so before taking the engagement.
+### Q2: What does ASTONTO research?
+Category: ASTONTO
+Answer: ASTONTO researches how AI platforms interpret corporate information, resolve entity identity, select citation sources, compare alternatives, and generate brand recommendations across platforms, locations, and languages.
 
-Q: How is ASTONTO different from a marketing agency?
-A: It is a research operation first. Every recommendation traces to live platform test data for the client's specific market and segment — not templates or generic industry statistics.
 
-## Trademarks and legal
+### Q3: Is ASTONTO an AI Search Visibility agency?
+Category: ASTONTO
+Answer: ASTONTO is an independent research company. AnswerSignal is our applied commercial service that provides empirical AI Search Visibility audits and optimisation sprints for corporate clients.
 
-PRISM™ and AVI™ are trademarks of ASTONTO LTD. © 2026 ASTONTO LTD, Company No. 17320644, registered in England and Wales.
+
+### Q4: What is black-box AI evaluation?
+Category: ASTONTO
+Answer: Black-box AI evaluation is the scientific observation of publicly accessible AI outputs under controlled prompt conditions, measuring real-world model responses without claiming internal access to proprietary code or weights.
+
+
+### Q5: Does ASTONTO have access to AI model source code or weights?
+Category: ASTONTO
+Answer: No. ASTONTO evaluates observable outputs from public and enterprise interfaces. We do not claim access to proprietary model weights, hidden ranking algorithms, or undisclosed vendor update schedules.
+
+
+### Q6: How does ASTONTO preserve research independence?
+Category: ASTONTO
+Answer: ASTONTO enforces strict methodology controls, preserves verbatim output logs, and refuses commercial arrangements that mandate specific research findings or ranking outcomes.
+
+
+### Q7: What is AnswerSignal?
+Category: AnswerSignal
+Answer: AnswerSignal is ASTONTO's applied AI Search Visibility product. It measures how ChatGPT, Perplexity, Gemini, and Google AI Overviews recommend a company compared with four selected competitors.
+
+
+### Q8: What is AI Search Visibility?
+Category: AnswerSignal
+Answer: AI Search Visibility is the degree to which an organisation is accurately cited, prominently positioned, and positively recommended by generative AI engines when prospects ask commercial buyer queries.
+
+
+### Q9: Which AI platforms does AnswerSignal evaluate?
+Category: AnswerSignal
+Answer: AnswerSignal evaluates ChatGPT (OpenAI), Perplexity, Gemini (Google), and Google AI Overviews.
+
+
+### Q10: What is the difference between an AI mention and an AI recommendation?
+Category: AnswerSignal
+Answer: An AI mention occurs whenever a brand name appears in an answer. An AI recommendation occurs when the AI engine explicitly endorses the company as a preferred solution for a specific buyer context.
+
+
+### Q11: Why might a market-leading company be absent from AI recommendations?
+Category: AnswerSignal
+Answer: AI engines rely on clear entity resolution, structured data, and third-party citation density. Market leaders with weak digital entity signals or fragmented third-party references are often omitted by LLMs.
+
+
+### Q12: Can AnswerSignal guarantee that an AI platform will recommend my company?
+Category: AnswerSignal
+Answer: No. Commercial AI engines operate non-deterministically. AnswerSignal identifies visibility gaps and implements evidence-based improvements, but does not guarantee future AI recommendation outcomes.
+
+
+### Q13: How does AnswerSignal choose competitors?
+Category: AnswerSignal
+Answer: Competitors are selected during audit scoping based on direct commercial overlap, geographic market rivalry, and buyer evaluation context.
+
+
+### Q14: Why do results vary by platform, location and language?
+Category: AnswerSignal
+Answer: AI platforms draw from different index sources, user IP geolocations, and linguistic models, resulting in distinct vendor recommendations across geographic markets.
+
+
+### Q15: How often should AI visibility be tested?
+Category: AnswerSignal
+Answer: Because commercial LLMs update continuously, baseline benchmarking should be performed quarterly, supported by ongoing monthly monitoring for high-value buyer prompts.
+
+
+### Q16: What is the PULSE Method?
+Category: PULSE
+Answer: The PULSE Method is ASTONTO's proprietary framework for calculating multi-platform AI recommendation visibility, prominence, sentiment, and competitor performance.
+
+
+### Q17: What does a PULSE Score measure?
+Category: PULSE
+Answer: A PULSE Score measures observed AI recommendation strength across position, endorsement classification, sentiment, and prompt importance.
+
+
+### Q18: What is PULSE Reliability?
+Category: PULSE
+Answer: PULSE Reliability indicates statistical confidence based on prompt volume, repeat test runs, platform coverage, and testing duration (High, Medium, or Indicative).
+
+
+### Q19: What is a PULSE Benchmark Score?
+Category: PULSE
+Answer: A PULSE Benchmark Score establishes an organisation's baseline AI visibility score at the start of an audit or optimisation sprint.
+
+
+### Q20: What is a PULSE Market Score?
+Category: PULSE
+Answer: A PULSE Market Score measures visibility across a defined geographic or sector market segment.
+
+
+### Q21: What is PULSE Share of Voice?
+Category: PULSE
+Answer: PULSE Share of Voice measures your company's relative visibility and recommendation win rate compared with four selected competitors.
+
+
+### Q22: How are negative recommendations handled?
+Category: PULSE
+Answer: Negative sentiment, hallucinated errors, or cautionary disclaimers reduce the Sentiment Factor in the PULSE formula and are flagged as Reputation Risks.
+
+
+### Q23: Why are repeated runs required?
+Category: PULSE
+Answer: LLM outputs are stochastic. Running 5–10 iterations per prompt ensures reliable measurement of true underlying recommendation consistency.
+
+
+### Q24: What is included in the 24-Hour AI Visibility Audit?
+Category: Services and pricing
+Answer: The audit evaluates your company plus four competitors across four AI platforms, delivering a PULSE Score, preserved evidence log, Reputation Risk analysis, and live presentation.
+
+
+### Q25: What is included in the 90-Day Optimisation Sprint?
+Category: Services and pricing
+Answer: The 90-day sprint includes entity and technical clarity fixes, answer-ready content expansion, third-party authority building, gap closure, and final retesting.
+
+
+### Q26: What can be improved during an AI visibility sprint?
+Category: Services and pricing
+Answer: Key improvements target entity schema resolution, answer-ready site content structure, third-party profile consistency, and authoritative industry citations.
+
+
+### Q27: How is pricing determined?
+Category: Services and pricing
+Answer: Pricing is calculated based on market scope, language requirements, prompt volume, and implementation depth. Live scope confirmation is provided before agreement.
+
+
+### Q28: Is the audit fee credited to the sprint?
+Category: Services and pricing
+Answer: Yes. The 24-Hour AI Visibility Audit fee is credited toward the 90-Day Optimisation Sprint when agreed within the approved timeframe.
+
+
+### Q29: What does monitoring include?
+Category: Services and pricing
+Answer: AI Visibility Monitoring tracks monthly PULSE Score movements, competitor overtakes, prompt changes, negative sentiment alerts, and LLM model updates.
+
+
+### Q30: What information is needed to begin?
+Category: Services and pricing
+Answer: To begin an audit, we require your corporate domain, primary geographic markets, key service offerings, and four selected market competitors.
+
+
+---
+
+## 5. Official Canonical Links
+
+- Home: https://astonto.com/
+- Research: https://astonto.com/research
+- AnswerSignal: https://astonto.com/answer-signal
+- PULSE Method: https://astonto.com/pulse-method
+- Audit Service: https://astonto.com/services/ai-visibility-audit
+- Sprint Service: https://astonto.com/services/90-day-optimisation-sprint
+- Monitoring: https://astonto.com/services/monitoring
+- Pricing: https://astonto.com/pricing
+- FAQ: https://astonto.com/faq
+- About: https://astonto.com/about
+- Contact: https://astonto.com/contact
+- Privacy Notice: https://astonto.com/privacy
+- Cookie Policy: https://astonto.com/cookies
+- Terms of Use: https://astonto.com/terms
+- Accessibility Statement: https://astonto.com/accessibility

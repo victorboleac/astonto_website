@@ -1,22 +1,35 @@
 # ASTONTO
 
-> ASTONTO is an AI Search Optimization (AISO) agency for US real estate agents and teams. It researches how AI platforms (ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, Google AI Overviews) recommend real estate agents, quantifies each agent's visibility with a proprietary AVI™ score, and closes visibility gaps using the PRISM™ five-phase framework. Operated by ASTONTO LTD (UK Company No. 17320644). Active market: Miami, FL. Expanding across the US market by market.
+> ASTONTO is an independent AI research company studying the observable behaviour of large language models and AI recommendation systems. ASTONTO's applied product is AnswerSignal, an AI Search Visibility service that measures corporate representation and recommendations across major AI platforms.
 
-Key facts:
-- Core finding: roughly 9 in 10 of Miami's top-producing agents (by verified volume) do not appear in any AI platform recommendation. AI platforms reward ranking pages, data content, and citations — not closing volume.
-- Method: live query testing (15+ query types per segment) across 7 AI platforms, cross-referenced against a 95-agent ground-truth list built from RealTrends and Zillow Agent Finder.
-- Frameworks: PRISM™ (Profile → Reverse → Intervene → Signal → Monitor) for delivery; AVI™ (AI Visibility Index, 0–100, scored on Presence, Position, Sentiment, Context).
-- Services and pricing: AI Visibility Audit $500 one-time (fully credited toward a sprint); Visibility Sprint $1,500/month; Luxury & Team Sprint $2,500/month; Ongoing Monitoring $600/month. No performance-based pricing.
-- Founder: Victor Boleac — CS Master's, University of Colorado Boulder; former ML systems builder.
-- Contact: hello@astonto.com · +1 (786) 927-6004 · https://astonto.com
+## Core Information & Product Pages
 
-## Sections
+- [ASTONTO Research Hub](https://astonto.com/research): Observational framework and empirical black-box testing methodology for commercial LLMs.
+- [AnswerSignal AI Search Visibility](https://astonto.com/answer-signal): Applied product measuring brand representation across ChatGPT, Perplexity, Gemini, and Google AI Overviews vs 4 competitors.
+- [PULSE Method v1.0 Specification](https://astonto.com/pulse-method): Public mathematical formula specification for calculating position factor, recommendation class, and sentiment.
 
-- [Research findings](https://astonto.com/#research): Miami Round 1 data — segment consolidation, platform behavior differences, the visibility gap.
-- [Method](https://astonto.com/#method): PRISM™ framework and AVI™ scoring explained.
-- [Pricing](https://astonto.com/#pricing): audit, sprint tiers, and monitoring.
-- [About](https://astonto.com/#about): the founding thesis and who runs ASTONTO.
+## Services & Commercial Scope
 
-## Optional
+- [24-Hour AI Visibility Audit](https://astonto.com/services/ai-visibility-audit): Fixed-scope empirical audit evaluating brand representation and competitor benchmarking.
+- [90-Day AI Visibility Optimisation Sprint](https://astonto.com/services/90-day-optimisation-sprint): Structured execution sprint across entity clarity, answer-ready content, and third-party authority.
+- [AI Visibility Monitoring](https://astonto.com/services/monitoring): Ongoing monthly tracking of PULSE score movements and competitor overtakes.
+- [Commercial Scope & Pricing](https://astonto.com/pricing): Pricing parameters and scope drivers for UK and EU organisations.
 
-- [Full details](https://astonto.com/llms-full.txt): complete service, methodology, and research documentation.
+## Resources & Educational Guides
+
+- [Resource Centre](https://astonto.com/resources): Educational articles on AI search, entity resolution, and structured data.
+- [Industry AI Visibility Hub](https://astonto.com/industries): Category guides for professional services, IT, accountancy, law, property, and consulting.
+- [Educational Comparisons Hub](https://astonto.com/compare): Objective analyses comparing AI visibility benchmarking with traditional SEO rank tracking.
+- [Frequently Asked Questions](https://astonto.com/faq): 30 direct, answer-ready explanations of ASTONTO research, PULSE scoring, and services.
+
+## Contact & Corporate Identity
+
+- [Contact ASTONTO](https://astonto.com/contact): Book a 20-minute AI visibility check or submit a research enquiry. Address: 66 Paul Street, London, EC2A 4NA, England. Telephone: +44 7845 580266. LinkedIn: https://www.linkedin.com/company/astonto/
+- [About ASTONTO](https://astonto.com/about): Corporate background and observational research principles.
+
+## Optional Policies & Trust Pages
+
+- [Privacy Notice](https://astonto.com/privacy)
+- [Cookie Policy](https://astonto.com/cookies)
+- [Terms of Use](https://astonto.com/terms)
+- [Accessibility Statement](https://astonto.com/accessibility)

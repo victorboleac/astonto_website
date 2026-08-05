@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #f7f8f6;
+    --surface: #ffffff;
+    --surface-soft: #f0f3f2;
+    --surface-tint: #e9f8fb;
+    --ink: #0b1f33;
+    --ink-soft: #33485b;
+    --muted: #687987;
+    --line: #d9e0e3;
+    --line-strong: #b9c6cc;
+    --navy: #0a2742;
+    --navy-deep: #071b2d;
+    --cyan: #12c6df;
+    --cyan-deep: #069bb4;
+    --cyan-soft: #dff7fb;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-inter), Manrope, system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--cyan-soft);
+    color: var(--navy-deep);
+  }
+}
+
+.skip-to-content {
+  @apply sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-[#0a2742] focus:text-white focus:font-bold;
+}

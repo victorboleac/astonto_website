@@ -1,0 +1,47 @@
+import React from "react";
+import Link from "next/link";
+import { SectionLabel } from "@/components/SectionLabel";
+import { getAllContent } from "@lib/content";
+
+export const metadata = {
+  title: "Resource Centre & Educational Guides",
+  description: "Articles, technical notes, and guides on AI Search Visibility and LLM entity representation.",
+};
+
+export default function ResourcesPage() {
+  const articles = getAllContent("resources");
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
+      <div className="max-w-3xl space-y-4">
+        <SectionLabel>Resource Centre</SectionLabel>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-navy">
+          Educational Guides & Research Notes
+        </h1>
+        <p className="text-base text-ink-soft leading-relaxed">
+          Clear, evidence-backed explanations covering AI search, entity resolution, structured data, and PULSE scoring.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((item) => (
+          <div key={item.meta.slug} className="p-6 rounded-2xl bg-surface border border-line shadow-sm space-y-3">
+            <div className="flex justify-between text-xs text-muted font-mono">
+              <span className="text-cyan-deep font-semibold">{item.meta.category || "Guide"}</span>
+              <span>{item.meta.readingTime}</span>
+            </div>
+            <h2 className="text-lg font-bold text-navy hover:text-cyan-deep transition-colors">
+              <Link href={`/resources/${item.meta.slug}`}>{item.meta.title}</Link>
+            </h2>
+            <p className="text-xs text-ink-soft line-clamp-3 leading-relaxed">{item.meta.description}</p>
+            <div className="pt-2">
+              <Link href={`/resources/${item.meta.slug}`} className="text-xs font-bold text-cyan-deep hover:underline">
+                Read Guide →
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
