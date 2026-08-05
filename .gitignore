@@ -7,12 +7,20 @@ out/
 dist/
 tsconfig.tsbuildinfo
 
+# Local Environment Variables & Credentials
+.env
+.env*.local
+
 # Local Netlify Folder
 .netlify/
 
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Uploaded Assets
+public/uploads/*
+!public/uploads/.gitkeep
 
 # Documentation & Prompt Markdown Files (content/ directory retained for build operationality)
 *.md

@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@config/site";
-import { getAllContent } from "@lib/content";
+import { getAllContentAsync } from "@lib/content";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
 
   const staticRoutes = [
@@ -31,7 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const researchRoutes = getAllContent("research")
+  const research = await getAllContentAsync("research");
+  const researchRoutes = research
     .filter((item) => !item.meta.noindex)
     .map((item) => ({
       url: `${baseUrl}/research/${item.meta.slug}`,
@@ -40,7 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  const resourceRoutes = getAllContent("resources")
+  const resources = await getAllContentAsync("resources");
+  const resourceRoutes = resources
     .filter((item) => !item.meta.noindex)
     .map((item) => ({
       url: `${baseUrl}/resources/${item.meta.slug}`,
@@ -49,7 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  const industryRoutes = getAllContent("industries")
+  const industries = await getAllContentAsync("industries");
+  const industryRoutes = industries
     .filter((item) => !item.meta.noindex)
     .map((item) => ({
       url: `${baseUrl}/industries/${item.meta.slug}`,
@@ -58,7 +61,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  const comparisonRoutes = getAllContent("comparisons")
+  const comparisons = await getAllContentAsync("comparisons");
+  const comparisonRoutes = comparisons
     .filter((item) => !item.meta.noindex)
     .map((item) => ({
       url: `${baseUrl}/compare/${item.meta.slug}`,
@@ -67,11 +71,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  return [
-    ...staticRoutes,
-    ...researchRoutes,
-    ...resourceRoutes,
-    ...industryRoutes,
-    ...comparisonRoutes,
-  ];
+  return [...staticRoutes, ...researchRoutes, ...resourceRoutes, ...industryRoutes, ...comparisonRoutes];
 }

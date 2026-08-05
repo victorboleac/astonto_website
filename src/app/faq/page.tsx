@@ -1,17 +1,31 @@
 import React from "react";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionLabel } from "@/components/SectionLabel";
-import { faqItems } from "@content/faqData";
+import { faqItems as defaultFaqItems } from "@content/faqData";
 import { getFAQSchema } from "@lib/schema";
+import { fetchFaqsFromSupabase } from "@lib/supabase/client";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata = {
   title: "Frequently Asked Questions",
   description: "Direct, answer-ready explanations of ASTONTO research, AnswerSignal audits, PULSE Method, services, and pricing.",
 };
 
-export default function FAQPage() {
+export default async function FAQPage() {
+  const supabaseFaqs = await fetchFaqsFromSupabase();
+  const faqItems = supabaseFaqs && supabaseFaqs.length > 0
+    ? supabaseFaqs.map((f: any) => ({
+        id: f.id,
+        question: f.question,
+        answer: f.answer,
+        category: f.category,
+      }))
+    : defaultFaqItems;
+
   const faqSchema = getFAQSchema(
-    faqItems.map((f) => ({ question: f.question, answer: f.answer }))
+    faqItems.map((f: any) => ({ question: f.question, answer: f.answer }))
   );
 
   const categories = ["ASTONTO", "AnswerSignal", "PULSE", "Services and pricing"] as const;
@@ -35,7 +49,8 @@ export default function FAQPage() {
 
       <div className="space-y-10">
         {categories.map((cat) => {
-          const categoryItems = faqItems.filter((i) => i.category === cat);
+          const categoryItems = faqItems.filter((i: any) => i.category === cat);
+          if (categoryItems.length === 0) return null;
           return (
             <div key={cat} className="space-y-4">
               <h2 className="text-xl font-bold text-navy font-mono border-b border-line pb-2">

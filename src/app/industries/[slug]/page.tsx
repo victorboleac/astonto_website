@@ -1,16 +1,16 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getContentBySlug, getAllContent } from "@lib/content";
+import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { marked } from "marked";
 
 export async function generateStaticParams() {
-  const items = getAllContent("industries");
+  const items = await getAllContentAsync("industries");
   return items.map((a) => ({ slug: a.meta.slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("industries", params.slug);
+  const item = await getContentBySlugAsync("industries", params.slug);
   if (!item) return {};
   return {
     title: item.meta.title,
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function IndustryDetailPage({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("industries", params.slug);
+export default async function IndustryDetailPage({ params }: { params: { slug: string } }) {
+  const item = await getContentBySlugAsync("industries", params.slug);
   if (!item) notFound();
 
   const htmlContent = marked(item.content);

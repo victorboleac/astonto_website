@@ -1,15 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
-import { getAllContent } from "@lib/content";
+import { getAllContentAsync } from "@lib/content";
 
 export const metadata = {
   title: "Educational Comparisons Hub",
   description: "Comparing AnswerSignal and PULSE Method with conventional SEO tools and mention-tracking utilities.",
 };
 
-export default function CompareHubPage() {
-  const comparisons = getAllContent("comparisons").filter((c) => !c.meta.noindex);
+export default async function CompareHubPage() {
+  const allComps = await getAllContentAsync("comparisons");
+  const comparisons = allComps.filter((c) => !c.meta.noindex);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">

@@ -1,18 +1,18 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getContentBySlug, getAllContent } from "@lib/content";
+import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { getArticleSchema } from "@lib/schema";
 import { siteConfig } from "@config/site";
 import { marked } from "marked";
 
 export async function generateStaticParams() {
-  const items = getAllContent("resources");
+  const items = await getAllContentAsync("resources");
   return items.map((a) => ({ slug: a.meta.slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("resources", params.slug);
+  const item = await getContentBySlugAsync("resources", params.slug);
   if (!item) return {};
   return {
     title: item.meta.title,
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ResourceArticleDetail({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("resources", params.slug);
+export default async function ResourceArticleDetail({ params }: { params: { slug: string } }) {
+  const item = await getContentBySlugAsync("resources", params.slug);
   if (!item) notFound();
 
   const htmlContent = marked(item.content);
@@ -55,6 +55,16 @@ export default function ResourceArticleDetail({ params }: { params: { slug: stri
           <span>•</span>
           <span className="text-cyan-deep font-bold">{item.meta.readingTime}</span>
         </div>
+
+        {item.meta.imageUrl && (
+          <div className="pt-4">
+            <img
+              src={item.meta.imageUrl}
+              alt={item.meta.title}
+              className="w-full max-h-96 object-cover rounded-2xl border border-line shadow-sm"
+            />
+          </div>
+        )}
       </div>
 
       <div

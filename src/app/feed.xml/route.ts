@@ -1,8 +1,10 @@
 import { siteConfig } from "@config/site";
-import { getAllContent } from "@lib/content";
+import { getAllContentAsync } from "@lib/content";
 
 export async function GET() {
-  const articles = [...getAllContent("research"), ...getAllContent("resources")];
+  const research = await getAllContentAsync("research");
+  const resources = await getAllContentAsync("resources");
+  const articles = [...research, ...resources];
 
   const itemsXml = articles
     .map(

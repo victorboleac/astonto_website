@@ -1,16 +1,16 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getContentBySlug, getAllContent } from "@lib/content";
+import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { marked } from "marked";
 
 export async function generateStaticParams() {
-  const items = getAllContent("comparisons");
+  const items = await getAllContentAsync("comparisons");
   return items.map((a) => ({ slug: a.meta.slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("comparisons", params.slug);
+  const item = await getContentBySlugAsync("comparisons", params.slug);
   if (!item) return {};
   return {
     title: item.meta.title,
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ComparisonDetailPage({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("comparisons", params.slug);
+export default async function ComparisonDetailPage({ params }: { params: { slug: string } }) {
+  const item = await getContentBySlugAsync("comparisons", params.slug);
   if (!item) notFound();
 
   const htmlContent = marked(item.content);

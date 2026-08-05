@@ -22,6 +22,7 @@ export interface ContentMeta {
   noindex?: boolean;
   category?: string;
   readingTime?: string;
+  imageUrl?: string;
 }
 
 export interface ContentItem<T = Record<string, any>> {

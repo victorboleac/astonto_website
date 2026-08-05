@@ -6,11 +6,54 @@ import { EvidencePanel } from "@/components/EvidencePanel";
 import { DarkCTA } from "@/components/DarkCTA";
 import { SectionLabel } from "@/components/SectionLabel";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { faqItems } from "@content/faqData";
-import { pricing, formatPrice } from "@config/pricing";
+import { faqItems as defaultFaqItems } from "@content/faqData";
+import { pricing as defaultPricing, formatPrice } from "@config/pricing";
+import { fetchFaqsFromSupabase, fetchPricingFromSupabase } from "@lib/supabase/client";
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+export default async function HomePage() {
+  const supabaseFaqs = await fetchFaqsFromSupabase();
+  const faqItems = supabaseFaqs && supabaseFaqs.length > 0
+    ? supabaseFaqs.map((f: any) => ({
+        id: f.id,
+        question: f.question,
+        answer: f.answer,
+        category: f.category,
+      }))
+    : defaultFaqItems;
   const previewFaqs = faqItems.slice(0, 6);
+
+  const supabaseTiers = await fetchPricingFromSupabase();
+  const getTier = (id: string, fallback: any) => {
+    if (!supabaseTiers || supabaseTiers.length === 0) return fallback;
+    const match = supabaseTiers.find((t: any) => t.id === id);
+    if (!match) return fallback;
+    return {
+      name: match.name || fallback.name,
+      price: match.price ?? fallback.price,
+      pricePrefix: match.price_prefix || fallback.pricePrefix,
+      priceLabel: match.price_label || fallback.priceLabel,
+      monthlyOption: match.monthly_option || fallback.monthlyOption,
+      billingLabel: match.billing_label || fallback.billingLabel,
+      bestFit: match.best_fit || fallback.bestFit,
+      description: match.description || fallback.description,
+      included: match.included || fallback.included,
+      creditPolicy: match.credit_policy || fallback.creditPolicy,
+      disclaimer: match.disclaimer || fallback.disclaimer,
+      commercialTerms: match.commercial_terms || fallback.commercialTerms || [],
+      scopeBoundaries: match.scope_boundaries || fallback.scopeBoundaries || { included: [], quotedSeparately: [] },
+      ctaText: match.cta_text || fallback.ctaText,
+      ctaHref: match.cta_href || fallback.ctaHref,
+      highlighted: match.highlighted ?? fallback.highlighted ?? false,
+    };
+  };
+
+  const checkOffer = getTier("check", defaultPricing.check);
+  const auditOffer = getTier("audit", defaultPricing.audit);
+  const sprintOffer = getTier("sprint", defaultPricing.sprint);
+  const monitoringOffer = getTier("monitoring", defaultPricing.monitoring);
 
   const researchIndexItems = [
     {
@@ -53,7 +96,7 @@ export default function HomePage() {
                 href="/contact?service=check"
                 className="px-6 py-3.5 rounded-lg bg-navy hover:bg-navy-deep text-white font-bold text-sm text-center transition-all shadow-sm"
               >
-                {pricing.check.ctaText}
+                {checkOffer.ctaText}
               </Link>
               <Link
                 href="/answer-signal"
@@ -106,15 +149,15 @@ export default function HomePage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-2.5 py-0.5 rounded bg-cyan-soft text-cyan-deep inline-block">
                   Entry Audit Offer
                 </span>
-                <h3 className="text-2xl font-bold text-navy">{pricing.audit.name}</h3>
+                <h3 className="text-2xl font-bold text-navy">{auditOffer.name}</h3>
                 <div className="text-xl font-bold font-mono text-cyan-deep">
-                  {formatPrice(pricing.audit.price)}
+                  {auditOffer.priceLabel || formatPrice(auditOffer.price)}
                 </div>
                 <p className="text-xs text-ink-soft leading-relaxed">
-                  {pricing.audit.description}
+                  {auditOffer.description}
                 </p>
                 <ul className="text-xs text-ink-soft space-y-1.5 pt-2">
-                  {pricing.audit.included.slice(0, 5).map((item, i) => (
+                  {auditOffer.included.slice(0, 5).map((item: string, i: number) => (
                     <li key={i} className="flex items-center space-x-2">
                       <span className="text-cyan-deep font-bold">•</span>
                       <span>{item}</span>
@@ -122,7 +165,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <div className="p-3 rounded-lg bg-surface-tint border border-cyan/20 text-xs text-navy">
-                  {pricing.audit.creditPolicy}
+                  {auditOffer.creditPolicy}
                 </div>
               </div>
 
@@ -131,7 +174,7 @@ export default function HomePage() {
                   href="/services/ai-visibility-audit"
                   className="block text-center w-full py-3.5 rounded-lg bg-navy hover:bg-navy-deep text-white font-bold text-xs transition-all shadow-sm"
                 >
-                  {pricing.audit.ctaText} →
+                  {auditOffer.ctaText} →
                 </Link>
               </div>
             </div>
@@ -142,15 +185,15 @@ export default function HomePage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 rounded bg-surface-soft text-navy">
                   90-Day Sprint
                 </span>
-                <h3 className="text-lg font-bold text-navy">{pricing.sprint.name}</h3>
+                <h3 className="text-lg font-bold text-navy">{sprintOffer.name}</h3>
                 <div className="text-sm font-mono text-cyan-deep font-bold">
-                  {formatPrice(pricing.sprint.price)} ({pricing.sprint.monthlyOption})
+                  {sprintOffer.priceLabel || formatPrice(sprintOffer.price)} ({sprintOffer.monthlyOption})
                 </div>
                 <p className="text-xs text-ink-soft leading-relaxed">
-                  {pricing.sprint.description}
+                  {sprintOffer.description}
                 </p>
                 <Link href="/services/90-day-optimisation-sprint" className="inline-block text-xs font-bold text-cyan-deep hover:underline pt-1">
-                  {pricing.sprint.ctaText} →
+                  {sprintOffer.ctaText} →
                 </Link>
               </div>
 
@@ -158,15 +201,15 @@ export default function HomePage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 rounded bg-surface-soft text-navy">
                   Monthly Tracking
                 </span>
-                <h3 className="text-lg font-bold text-navy">{pricing.monitoring.name}</h3>
+                <h3 className="text-lg font-bold text-navy">{monitoringOffer.name}</h3>
                 <div className="text-sm font-mono text-cyan-deep font-bold">
-                  {formatPrice(pricing.monitoring.priceFrom, "From")}
+                  {monitoringOffer.priceLabel || formatPrice(monitoringOffer.priceFrom, "From")}
                 </div>
                 <p className="text-xs text-ink-soft leading-relaxed">
-                  {pricing.monitoring.description}
+                  {monitoringOffer.description}
                 </p>
                 <Link href="/services/monitoring" className="inline-block text-xs font-bold text-cyan-deep hover:underline pt-1">
-                  {pricing.monitoring.ctaText} →
+                  {monitoringOffer.ctaText} →
                 </Link>
               </div>
             </div>
@@ -179,30 +222,30 @@ export default function HomePage() {
         <EvidencePanel />
       </section>
 
-      {/* 5. FAQ Preview Section */}
+      {/* 5. Frequently Asked Questions Preview */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
           <SectionLabel>FAQ Preview</SectionLabel>
-          <h2 className="text-2xl sm:text-3xl font-bold text-navy">Frequently Asked Questions</h2>
-          <p className="text-sm text-ink-soft">Direct answers to common questions about ASTONTO research and AnswerSignal.</p>
+          <h2 className="text-3xl font-bold text-navy">Frequently Asked Questions</h2>
         </div>
         <FAQAccordion items={previewFaqs} />
-        <div className="text-center pt-2">
-          <Link href="/faq" className="text-xs font-bold text-cyan-deep hover:underline">
-            View All 30 Frequently Asked Questions →
+        <div className="text-center pt-4">
+          <Link
+            href="/faq"
+            className="inline-block px-6 py-3 rounded-lg bg-surface hover:bg-surface-soft text-navy border border-line font-bold text-xs"
+          >
+            View All {faqItems.length} FAQs →
           </Link>
         </div>
       </section>
 
-      {/* 6. Controlled Dark Navy Footer CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <DarkCTA
-          headline="See how AI platforms recommend your company."
-          supportingText="Book your free 20-minute AI visibility check or request a 24-Hour AI Visibility Audit."
-          ctaText="Book your free visibility check"
-          ctaHref="/contact?service=check"
-        />
-      </section>
+      {/* 6. Primary Dark CTA Banner */}
+      <DarkCTA
+        headline="See how AI recommendations evaluate your business."
+        supportingText="Book a 20-Minute AI Visibility Check or full 24-Hour Audit for your company."
+        ctaText={auditOffer.ctaText}
+        ctaHref={auditOffer.ctaHref}
+      />
     </div>
   );
 }

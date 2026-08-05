@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
-import { getAllContent } from "@lib/content";
+import { getAllContentAsync } from "@lib/content";
 
 export const metadata = {
   title: "Industry AI Visibility Guides",
   description: "Educational insights into how buyers in professional services, IT, law, and consulting evaluate vendors using AI search.",
 };
 
-export default function IndustriesPage() {
-  const industries = getAllContent("industries");
+export default async function IndustriesPage() {
+  const industries = await getAllContentAsync("industries");
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">

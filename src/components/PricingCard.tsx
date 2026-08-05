@@ -6,6 +6,7 @@ interface PricingCardProps {
   name: string;
   price: number | null;
   pricePrefix?: string;
+  priceLabel?: string;
   monthlyOption?: string;
   billingLabel: string;
   bestFit: string;
@@ -24,6 +25,7 @@ export function PricingCard({
   name,
   price,
   pricePrefix = "",
+  priceLabel,
   monthlyOption,
   billingLabel,
   bestFit,
@@ -37,7 +39,7 @@ export function PricingCard({
   ctaHref,
   highlighted = false,
 }: PricingCardProps) {
-  const displayPrice = formatPrice(price, pricePrefix);
+  const displayPrice = priceLabel || formatPrice(price, pricePrefix);
 
   return (
     <div

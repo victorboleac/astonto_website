@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { ContentItem, ContentMeta } from "./types";
+import { isSupabaseConnected, fetchArticlesFromSupabase, fetchArticleBySlugFromSupabase } from "@lib/supabase/client";
 
 const contentDirectory = path.join(process.cwd(), "content");
 
@@ -64,4 +65,70 @@ export function getAllContent(type: "research" | "resources" | "industries" | "c
     console.error(`Error reading all content for ${type}:`, error);
     return [];
   }
+}
+
+// ASYNC DATA FETCHING LAYER (Tries Supabase first, falls back to local markdown files)
+export async function getContentBySlugAsync(
+  type: "research" | "resources" | "industries" | "comparisons",
+  slug: string
+): Promise<ContentItem | null> {
+  const row = await fetchArticleBySlugFromSupabase(slug);
+  if (row) {
+    return {
+      meta: {
+        slug: row.slug,
+        title: row.title,
+        description: row.description,
+        status: row.status,
+        author: row.author || "ASTONTO Research Team",
+        reviewer: row.reviewer || "Victor Boleac",
+        publishedAt: row.published_at ? new Date(row.published_at).toISOString().split("T")[0] : undefined,
+        modifiedAt: row.modified_at ? new Date(row.modified_at).toISOString().split("T")[0] : undefined,
+        methodologyVersion: row.methodology_version,
+        reliability: row.reliability,
+        evidenceRefs: row.evidence_refs || [],
+        noindex: Boolean(row.noindex),
+        category: row.category_label || type,
+        readingTime: row.reading_time || "5 min read",
+        imageUrl: row.image_url || undefined,
+      } as ContentMeta,
+      content: row.content_markdown || "",
+    };
+  }
+
+  // If Supabase is active and connected, but returned null, the article does not exist (e.g. deleted)
+  if (isSupabaseConnected()) {
+    return null;
+  }
+
+  return getContentBySlug(type, slug);
+}
+
+export async function getAllContentAsync(
+  type: "research" | "resources" | "industries" | "comparisons"
+): Promise<ContentItem[]> {
+  const supabaseRows = await fetchArticlesFromSupabase(type);
+  if (supabaseRows !== null) {
+    return supabaseRows.map((row: any) => ({
+      meta: {
+        slug: row.slug,
+        title: row.title,
+        description: row.description,
+        status: row.status,
+        author: row.author || "ASTONTO Research Team",
+        reviewer: row.reviewer || "Victor Boleac",
+        publishedAt: row.published_at ? new Date(row.published_at).toISOString().split("T")[0] : undefined,
+        modifiedAt: row.modified_at ? new Date(row.modified_at).toISOString().split("T")[0] : undefined,
+        methodologyVersion: row.methodology_version,
+        reliability: row.reliability,
+        evidenceRefs: row.evidence_refs || [],
+        noindex: Boolean(row.noindex),
+        category: row.category_label || type,
+        readingTime: row.reading_time || "5 min read",
+        imageUrl: row.image_url || undefined,
+      } as ContentMeta,
+      content: row.content_markdown || "",
+    }));
+  }
+  return getAllContent(type);
 }

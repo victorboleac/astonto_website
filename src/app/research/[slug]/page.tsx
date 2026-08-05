@@ -1,17 +1,17 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getContentBySlug, getAllContent } from "@lib/content";
+import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { siteConfig } from "@config/site";
 import { marked } from "marked";
 
 export async function generateStaticParams() {
-  const articles = getAllContent("research");
+  const articles = await getAllContentAsync("research");
   return articles.map((a) => ({ slug: a.meta.slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("research", params.slug);
+  const item = await getContentBySlugAsync("research", params.slug);
   if (!item) return {};
   return {
     title: item.meta.title,
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ResearchArticlePage({ params }: { params: { slug: string } }) {
-  const item = getContentBySlug("research", params.slug);
+export default async function ResearchArticlePage({ params }: { params: { slug: string } }) {
+  const item = await getContentBySlugAsync("research", params.slug);
   if (!item) notFound();
 
   const htmlContent = marked(item.content);
@@ -52,6 +52,16 @@ export default function ResearchArticlePage({ params }: { params: { slug: string
             <span className="text-navy font-semibold">{item.meta.reliability || "High"}</span>
           </div>
         </div>
+
+        {item.meta.imageUrl && (
+          <div className="pt-4">
+            <img
+              src={item.meta.imageUrl}
+              alt={item.meta.title}
+              className="w-full max-h-96 object-cover rounded-2xl border border-line shadow-sm"
+            />
+          </div>
+        )}
       </div>
 
       <div
