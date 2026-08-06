@@ -1,6 +1,6 @@
 export interface FAQItem {
   id: string;
-  category: "ASTONTO" | "AnswerSignal" | "PULSE" | "Services and pricing";
+  category: "ASTONTO" | "AI Search Visibility" | "PULSE" | "Services and pricing";
   question: string;
   answer: string;
 }
@@ -23,7 +23,7 @@ export const faqItems: FAQItem[] = [
     id: "q3",
     category: "ASTONTO",
     question: "Is ASTONTO an AI Search Visibility agency?",
-    answer: "ASTONTO is an independent research company. AnswerSignal is our applied commercial service that provides empirical AI Search Visibility audits and optimisation sprints for corporate clients."
+    answer: "ASTONTO is an independent research company. ASTONTO AI Search Visibility is our applied commercial service that provides empirical AI Search Visibility audits, optimisation sprints and monitoring for corporate clients."
   },
   {
     id: "q4",
@@ -44,58 +44,58 @@ export const faqItems: FAQItem[] = [
     answer: "ASTONTO enforces strict methodology controls, preserves verbatim output logs, and refuses commercial arrangements that mandate specific research findings or ranking outcomes."
   },
 
-  // AnswerSignal
+  // AI Search Visibility
   {
     id: "q7",
-    category: "AnswerSignal",
-    question: "What is AnswerSignal?",
-    answer: "AnswerSignal is ASTONTO's applied AI Search Visibility product. It measures how ChatGPT, Perplexity, Gemini, and Google AI Overviews recommend a company compared with four selected competitors."
+    category: "AI Search Visibility",
+    question: "What is ASTONTO AI Search Visibility?",
+    answer: "ASTONTO AI Search Visibility is our evidence-based audit, optimisation and monitoring service. It measures how businesses are recommended across ChatGPT, Perplexity, Gemini and Google AI Overviews using the PULSE Method."
   },
   {
     id: "q8",
-    category: "AnswerSignal",
+    category: "AI Search Visibility",
     question: "What is AI Search Visibility?",
     answer: "AI Search Visibility is the degree to which an organisation is accurately cited, prominently positioned, and positively recommended by generative AI engines when prospects ask commercial buyer queries."
   },
   {
     id: "q9",
-    category: "AnswerSignal",
-    question: "Which AI platforms does AnswerSignal evaluate?",
-    answer: "AnswerSignal evaluates ChatGPT (OpenAI), Perplexity, Gemini (Google), and Google AI Overviews."
+    category: "AI Search Visibility",
+    question: "Which AI platforms are evaluated?",
+    answer: "ASTONTO evaluates ChatGPT (OpenAI), Perplexity, Gemini (Google), and Google AI Overviews."
   },
   {
     id: "q10",
-    category: "AnswerSignal",
+    category: "AI Search Visibility",
     question: "What is the difference between an AI mention and an AI recommendation?",
     answer: "An AI mention occurs whenever a brand name appears in an answer. An AI recommendation occurs when the AI engine explicitly endorses the company as a preferred solution for a specific buyer context."
   },
   {
     id: "q11",
-    category: "AnswerSignal",
+    category: "AI Search Visibility",
     question: "Why might a market-leading company be absent from AI recommendations?",
     answer: "AI engines rely on clear entity resolution, structured data, and third-party citation density. Market leaders with weak digital entity signals or fragmented third-party references are often omitted by LLMs."
   },
   {
     id: "q12",
-    category: "AnswerSignal",
-    question: "Can AnswerSignal guarantee that an AI platform will recommend my company?",
-    answer: "No. Commercial AI engines operate non-deterministically. AnswerSignal identifies visibility gaps and implements evidence-based improvements, but does not guarantee future AI recommendation outcomes."
+    category: "AI Search Visibility",
+    question: "Can ASTONTO guarantee that an AI platform will recommend my company?",
+    answer: "No. Commercial AI engines operate non-deterministically. ASTONTO identifies visibility gaps and implements evidence-based improvements, but does not guarantee future AI recommendation outcomes."
   },
   {
     id: "q13",
-    category: "AnswerSignal",
-    question: "How does AnswerSignal choose competitors?",
+    category: "AI Search Visibility",
+    question: "How are competitors chosen for evaluation?",
     answer: "Competitors are selected during audit scoping based on direct commercial overlap, geographic market rivalry, and buyer evaluation context."
   },
   {
     id: "q14",
-    category: "AnswerSignal",
+    category: "AI Search Visibility",
     question: "Why do results vary by platform, location and language?",
     answer: "AI platforms draw from different index sources, user IP geolocations, and linguistic models, resulting in distinct vendor recommendations across geographic markets."
   },
   {
     id: "q15",
-    category: "AnswerSignal",
+    category: "AI Search Visibility",
     question: "How often should AI visibility be tested?",
     answer: "Because commercial LLMs update continuously, baseline benchmarking should be performed quarterly, supported by ongoing monthly monitoring for high-value buyer prompts."
   },

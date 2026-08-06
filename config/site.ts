@@ -2,9 +2,12 @@ export const siteConfig = {
   name: "ASTONTO",
   legalName: "ASTONTO LTD",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://astonto.com",
+  serviceCategory: "AI Search Visibility",
+  methodology: "PULSE Method",
+  reportedResult: "PULSE Score",
+  tagline: "Be the business AI recommends.",
   description:
-    "Independent AI research company studying the observable behaviour of large language models and AI recommendation systems. Creator of AnswerSignal.",
-  tagline: "Understanding how AI systems interpret, source and recommend.",
+    "Independent AI research company studying how large language models and AI recommendation systems interpret information, select sources, compare alternatives and form recommendations.",
   address: {
     street: "66 Paul Street",
     city: "London",

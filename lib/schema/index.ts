@@ -43,18 +43,22 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getAnswerSignalSchema() {
+export function getAISearchVisibilityServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${siteConfig.url}/#answersignal`,
-    name: "AnswerSignal",
-    serviceType: "AI Search Visibility Measurement & Optimisation",
+    "@id": `${siteConfig.url}/#service`,
+    name: "ASTONTO AI Search Visibility",
+    serviceType: "AI Search Visibility Audit, Optimisation and Monitoring",
     provider: {
       "@id": `${siteConfig.url}/#organization`,
     },
-    description: "AnswerSignal is ASTONTO's AI Search Visibility product/service measuring and improving company recommendations across AI search engines.",
-    url: `${siteConfig.url}/answer-signal`,
+    description: "ASTONTO AI Search Visibility measures and improves corporate recommendations across AI platforms using the PULSE Method.",
+    url: `${siteConfig.url}/ai-search-visibility`,
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "United Kingdom & European Union",
+    },
   };
 }
 

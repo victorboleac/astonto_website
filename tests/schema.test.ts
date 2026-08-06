@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   getOrganizationSchema,
   getWebSiteSchema,
+  getAISearchVisibilityServiceSchema,
   getWebPageSchema,
   getServiceSchema,
   getFAQSchema,
@@ -24,6 +25,13 @@ describe("JSON-LD Structured Data Generators", () => {
     const schema = getWebSiteSchema();
     expect(schema["@type"]).toBe("WebSite");
     expect(schema.url).toContain("astonto");
+  });
+
+  it("should generate valid AISearchVisibilityService schema", () => {
+    const schema = getAISearchVisibilityServiceSchema();
+    expect(schema["@type"]).toBe("Service");
+    expect(schema.name).toBe("ASTONTO AI Search Visibility");
+    expect(schema.url).toContain("/ai-search-visibility");
   });
 
   it("should generate valid Service schema", () => {

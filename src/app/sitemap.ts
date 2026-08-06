@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/research",
-    "/answer-signal",
+    "/ai-search-visibility",
     "/pulse-method",
     "/services/ai-visibility-audit",
     "/services/90-day-optimisation-sprint",

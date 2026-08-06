@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     template: "%s | ASTONTO",
   },
   description:
-    "ASTONTO researches how AI systems interpret, compare and recommend organisations. AnswerSignal measures and improves AI Search Visibility across major AI platforms.",
+    "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: "ASTONTO | Independent AI Research and AI Search Visibility",
     description:
-      "ASTONTO researches how AI systems interpret, compare and recommend organisations. AnswerSignal measures and improves AI Search Visibility across major AI platforms.",
+      "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_GB",

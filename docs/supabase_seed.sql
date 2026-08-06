@@ -43,19 +43,19 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO faqs (id, question, answer, category, sort_order, is_published) VALUES
 ('q1', 'What is ASTONTO?', 'ASTONTO is an independent AI research company that studies the observable behaviour of large language models and AI recommendation systems.', 'ASTONTO', 1, TRUE),
 ('q2', 'What does ASTONTO research?', 'ASTONTO researches how AI platforms interpret corporate information, resolve entity identity, select citation sources, compare alternatives, and generate brand recommendations across platforms, locations, and languages.', 'ASTONTO', 2, TRUE),
-('q3', 'Is ASTONTO an AI Search Visibility agency?', 'ASTONTO is an independent research company. AnswerSignal is our applied commercial service that provides empirical AI Search Visibility audits and optimisation sprints for corporate clients.', 'ASTONTO', 3, TRUE),
+('q3', 'Is ASTONTO an AI Search Visibility agency?', 'ASTONTO is an independent research company. ASTONTO AI Search Visibility is our applied commercial service that provides empirical AI Search Visibility audits, optimisation sprints and monitoring for corporate clients.', 'ASTONTO', 3, TRUE),
 ('q4', 'What is black-box AI evaluation?', 'Black-box AI evaluation is the scientific observation of publicly accessible AI outputs under controlled prompt conditions, measuring real-world model responses without claiming internal access to proprietary code or weights.', 'ASTONTO', 4, TRUE),
 ('q5', 'Does ASTONTO have access to AI model source code or weights?', 'No. ASTONTO evaluates observable outputs from public and enterprise interfaces. We do not claim access to proprietary model weights, hidden ranking algorithms, or undisclosed vendor update schedules.', 'ASTONTO', 5, TRUE),
 ('q6', 'How does ASTONTO preserve research independence?', 'ASTONTO enforces strict methodology controls, preserves verbatim output logs, and refuses commercial arrangements that mandate specific research findings or ranking outcomes.', 'ASTONTO', 6, TRUE),
-('q7', 'What is AnswerSignal?', 'AnswerSignal is ASTONTO''s applied AI Search Visibility product. It measures how ChatGPT, Perplexity, Gemini, and Google AI Overviews recommend a company compared with four selected competitors.', 'AnswerSignal', 7, TRUE),
-('q8', 'What is AI Search Visibility?', 'AI Search Visibility is the degree to which an organisation is accurately cited, prominently positioned, and positively recommended by generative AI engines when prospects ask commercial buyer queries.', 'AnswerSignal', 8, TRUE),
-('q9', 'Which AI platforms does AnswerSignal evaluate?', 'AnswerSignal evaluates ChatGPT (OpenAI), Perplexity, Gemini (Google), and Google AI Overviews.', 'AnswerSignal', 9, TRUE),
-('q10', 'What is the difference between an AI mention and an AI recommendation?', 'An AI mention occurs whenever a brand name appears in an answer. An AI recommendation occurs when the AI engine explicitly endorses the company as a preferred solution for a specific buyer context.', 'AnswerSignal', 10, TRUE),
-('q11', 'Why might a market-leading company be absent from AI recommendations?', 'AI engines rely on clear entity resolution, structured data, and third-party citation density. Market leaders with weak digital entity signals or fragmented third-party references are often omitted by LLMs.', 'AnswerSignal', 11, TRUE),
-('q12', 'Can AnswerSignal guarantee that an AI platform will recommend my company?', 'No. Commercial AI engines operate non-deterministically. AnswerSignal identifies visibility gaps and implements evidence-based improvements, but does not guarantee future AI recommendation outcomes.', 'AnswerSignal', 12, TRUE),
-('q13', 'How does AnswerSignal choose competitors?', 'Competitors are selected during audit scoping based on direct commercial overlap, geographic market rivalry, and buyer evaluation context.', 'AnswerSignal', 13, TRUE),
-('q14', 'Why do results vary by platform, location and language?', 'AI platforms draw from different index sources, user IP geolocations, and linguistic models, resulting in distinct vendor recommendations across geographic markets.', 'AnswerSignal', 14, TRUE),
-('q15', 'How often should AI visibility be tested?', 'Because commercial LLMs update continuously, baseline benchmarking should be performed quarterly, supported by ongoing monthly monitoring for high-value buyer prompts.', 'AnswerSignal', 15, TRUE),
+('q7', 'What is ASTONTO AI Search Visibility?', 'ASTONTO AI Search Visibility is our evidence-based audit, optimisation and monitoring service. It measures how businesses are recommended across ChatGPT, Perplexity, Gemini and Google AI Overviews using the PULSE Method.', 'AI Search Visibility', 7, TRUE),
+('q8', 'What is AI Search Visibility?', 'AI Search Visibility is the degree to which an organisation is accurately cited, prominently positioned, and positively recommended by generative AI engines when prospects ask commercial buyer queries.', 'AI Search Visibility', 8, TRUE),
+('q9', 'Which AI platforms are evaluated?', 'ASTONTO evaluates ChatGPT (OpenAI), Perplexity, Gemini (Google), and Google AI Overviews.', 'AI Search Visibility', 9, TRUE),
+('q10', 'What is the difference between an AI mention and an AI recommendation?', 'An AI mention occurs whenever a brand name appears in an answer. An AI recommendation occurs when the AI engine explicitly endorses the company as a preferred solution for a specific buyer context.', 'AI Search Visibility', 10, TRUE),
+('q11', 'Why might a market-leading company be absent from AI recommendations?', 'AI engines rely on clear entity resolution, structured data, and third-party citation density. Market leaders with weak digital entity signals or fragmented third-party references are often omitted by LLMs.', 'AI Search Visibility', 11, TRUE),
+('q12', 'Can ASTONTO guarantee that an AI platform will recommend my company?', 'No. Commercial AI engines operate non-deterministically. ASTONTO identifies visibility gaps and implements evidence-based improvements, but does not guarantee future AI recommendation outcomes.', 'AI Search Visibility', 12, TRUE),
+('q13', 'How are competitors chosen for evaluation?', 'Competitors are selected during audit scoping based on direct commercial overlap, geographic market rivalry, and buyer evaluation context.', 'AI Search Visibility', 13, TRUE),
+('q14', 'Why do results vary by platform, location and language?', 'AI platforms draw from different index sources, user IP geolocations, and linguistic models, resulting in distinct vendor recommendations across geographic markets.', 'AI Search Visibility', 14, TRUE),
+('q15', 'How often should AI visibility be tested?', 'Because commercial LLMs update continuously, baseline benchmarking should be performed quarterly, supported by ongoing monthly monitoring for high-value buyer prompts.', 'AI Search Visibility', 15, TRUE),
 ('q16', 'What is the PULSE Method?', 'The PULSE Method is ASTONTO''s proprietary framework for calculating multi-platform AI recommendation visibility, prominence, sentiment, and competitor performance.', 'PULSE', 16, TRUE),
 ('q17', 'What does a PULSE Score measure?', 'A PULSE Score measures observed AI recommendation strength across position, endorsement classification, sentiment, and prompt importance.', 'PULSE', 17, TRUE),
 ('q18', 'What is PULSE Reliability?', 'PULSE Reliability indicates statistical confidence based on prompt volume, repeat test runs, platform coverage, and testing duration (High, Medium, or Indicative).', 'PULSE', 18, TRUE),
@@ -255,13 +255,13 @@ Commercial real estate brokerages and valuation consultancies require clear geog
 ('ai-visibility-audit-vs-website-audit', 'comparisons', 'AI Search Visibility Audit vs Conventional Website Audit', 'Understanding the difference between technical site audits and LLM entity visibility audits.', '# AI Search Visibility Audit vs Conventional Website Audit
 
 A conventional website audit checks technical site health, page speed, meta tags, and broken links. An AI Search Visibility Audit evaluates how AI platforms interpret, source, and recommend your company relative to direct market competitors.', 'ASTONTO Research Team', 'Victor Boleac', 'published', '2026-08-01', '5 min read', 'High', '[]'::jsonb, FALSE, 'Comparison'),
-('answersignal-vs-traditional-seo-reporting', 'comparisons', 'AnswerSignal vs Traditional SEO Reporting', 'Why traditional keyword rank tracking fails to measure AI search recommendations.', '# AnswerSignal vs Traditional SEO Reporting
+('ai-search-visibility-vs-traditional-seo-reporting', 'comparisons', 'AI Search Visibility vs Traditional SEO Reporting', 'Why traditional keyword rank tracking fails to measure AI search recommendations.', '# AI Search Visibility vs Traditional SEO Reporting
 
-Traditional SEO reporting tools track rank position for static keywords on blue-link search engine result pages. AnswerSignal measures multi-platform AI recommendations across complex buyer queries.
+Traditional SEO reporting tools track rank position for static keywords on blue-link search engine result pages. ASTONTO AI Search Visibility measures multi-platform AI recommendations across complex buyer queries.
 
 ## Key Operational Differences
 
-| Feature | Traditional SEO Reporting | AnswerSignal |
+| Feature | Traditional SEO Reporting | ASTONTO AI Search Visibility |
 | --- | --- | --- |
 | Target Interface | Google / Bing SERP links | ChatGPT, Perplexity, Gemini, Google AI Overviews |
 | Primary Metric | Organic Rank Position | PULSE Score, Share of Voice |
@@ -273,13 +273,13 @@ ASTONTO evaluates observable outputs without claiming access to proprietary mode
 ('managed-optimisation-sprint-vs-one-off-recommendations', 'comparisons', 'Managed Optimisation Sprint vs One-off Recommendations', 'Why structured 90-day implementation outperforms unexecuted audit reports.', '# Managed Optimisation Sprint vs One-off Recommendations
 
 A 90-Day Optimisation Sprint pairs audit findings with hands-on execution across entity clarity, answer-ready content, and third-party authority building.', 'ASTONTO Research Team', 'Victor Boleac', 'published', '2026-08-01', '5 min read', 'High', '[]'::jsonb, FALSE, 'Comparison'),
-('named-competitor-template', 'comparisons', 'AnswerSignal vs [Competitor Name] (Draft Template)', 'Neutral comparison template for evaluated AI search reporting tools.', '# AnswerSignal vs [Competitor Name]
+('named-competitor-template', 'comparisons', 'ASTONTO AI Search Visibility vs [Competitor Name] (Template)', 'Neutral comparison template for evaluated AI search reporting tools.', '# ASTONTO AI Search Visibility vs [Competitor Name]
 
-*Draft template under legal and methodology review. Excluded from public sitemaps.*
+*Template under methodology review. Excluded from public sitemaps.*
 
 ## Neutral Offer Overview
 
-- **AnswerSignal:** Independent AI Search Visibility benchmarking based on empirical black-box testing (PULSE Method).
+- **ASTONTO AI Search Visibility:** Independent AI Search Visibility benchmarking based on empirical black-box testing (PULSE Method).
 - **[Competitor Name]:** [Neutral summary derived exclusively from published sources].
 
 ## Comparison Date & Criteria

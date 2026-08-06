@@ -89,7 +89,7 @@ export default async function HomePage() {
               We study how AI systems interpret, source and recommend.
             </h1>
             <p className="text-base sm:text-lg text-ink-soft leading-relaxed max-w-2xl">
-              ASTONTO investigates the observable behaviour of large language models and applies that research through AnswerSignal, our AI Search Visibility product.
+              ASTONTO investigates the observable behaviour of large language models and applies that research through evidence-based AI Search Visibility audits, optimisation sprints and monitoring.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
@@ -99,10 +99,10 @@ export default async function HomePage() {
                 {checkOffer.ctaText}
               </Link>
               <Link
-                href="/answer-signal"
+                href="/ai-search-visibility"
                 className="px-6 py-3.5 rounded-lg bg-surface hover:bg-surface-soft text-navy border border-line text-sm font-semibold text-center transition-all"
               >
-                Explore AnswerSignal
+                Explore AI Search Visibility
               </Link>
             </div>
             <div className="pt-2 text-xs font-mono text-muted flex items-center space-x-4">
@@ -127,14 +127,14 @@ export default async function HomePage() {
         <ResearchIndex items={researchIndexItems} />
       </section>
 
-      {/* 3. AnswerSignal Product Introduction & Offers */}
+      {/* 3. AI Search Visibility Introduction & Offers */}
       <section className="bg-surface-tint border-y border-line py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl space-y-4">
             <SectionLabel>Applied Commercial Service</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy">Be the business AI recommends.</h2>
             <p className="text-base text-ink-soft leading-relaxed">
-              AnswerSignal measures how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your company versus four selected competitors—and builds an evidence-based plan to improve your AI Search Visibility.
+              ASTONTO measures how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your company compared with four selected competitors—and develops an evidence-based plan to strengthen your AI Search Visibility.
             </p>
             <div className="p-4 rounded-xl bg-surface border border-line text-xs text-muted font-mono">
               <strong className="text-navy font-bold">Methodology Notice:</strong> The PULSE Score reflects observed performance during the documented testing period. AI-generated answers change, and future visibility cannot be guaranteed.
