@@ -1,11 +1,31 @@
-import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { getAllContentAsync } from "@lib/content";
 
-export const metadata = {
-  title: "Educational Comparisons Hub | ASTONTO",
+export const metadata: Metadata = {
+  title: "Educational Comparisons Hub",
   description: "Comparing ASTONTO AI Search Visibility and the PULSE Method with conventional SEO tools and mention-tracking utilities.",
+  alternates: {
+    canonical: "/compare",
+  },
+  openGraph: {
+    title: "Educational Comparisons Hub",
+    description: "Comparing ASTONTO AI Search Visibility and the PULSE Method with conventional SEO tools and mention-tracking utilities.",
+    url: "/compare",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Educational Comparisons Hub",
+    description: "Comparing ASTONTO AI Search Visibility and the PULSE Method with conventional SEO tools and mention-tracking utilities.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function CompareHubPage() {

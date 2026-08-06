@@ -1,11 +1,31 @@
-import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { getAllContentAsync } from "@lib/content";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Resource Centre & Educational Guides",
   description: "Articles, technical notes, and guides on AI Search Visibility and LLM entity representation.",
+  alternates: {
+    canonical: "/resources",
+  },
+  openGraph: {
+    title: "Resource Centre & Educational Guides",
+    description: "Articles, technical notes, and guides on AI Search Visibility and LLM entity representation.",
+    url: "/resources",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Resource Centre & Educational Guides",
+    description: "Articles, technical notes, and guides on AI Search Visibility and LLM entity representation.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function ResourcesPage() {

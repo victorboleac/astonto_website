@@ -1,11 +1,31 @@
-import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { siteConfig } from "@config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About ASTONTO — Independent AI Research Company",
   description: "ASTONTO studies the observable behaviour of large language models and AI recommendation systems.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About ASTONTO — Independent AI Research Company",
+    description: "ASTONTO studies the observable behaviour of large language models and AI recommendation systems.",
+    url: "/about",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About ASTONTO — Independent AI Research Company",
+    description: "ASTONTO studies the observable behaviour of large language models and AI recommendation systems.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function AboutPage() {

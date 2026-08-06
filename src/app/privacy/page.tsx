@@ -1,9 +1,29 @@
-import React from "react";
+import type { Metadata } from "next";
 import { siteConfig } from "@config/site";
 
-export const metadata = {
-  title: "Privacy Notice | ASTONTO",
+export const metadata: Metadata = {
+  title: "Privacy Notice",
   description: "ASTONTO Privacy Notice describing data processing, UK/EU GDPR compliance, Netlify Form data handling, and data subject rights.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Notice",
+    description: "ASTONTO Privacy Notice describing data processing, UK/EU GDPR compliance, Netlify Form data handling, and data subject rights.",
+    url: "/privacy",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Notice",
+    description: "ASTONTO Privacy Notice describing data processing, UK/EU GDPR compliance, Netlify Form data handling, and data subject rights.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PrivacyPage() {

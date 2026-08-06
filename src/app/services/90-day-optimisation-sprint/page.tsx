@@ -1,4 +1,4 @@
-import React from "react";
+import type { Metadata } from "next";
 import { SectionLabel } from "@/components/SectionLabel";
 import { DarkCTA } from "@/components/DarkCTA";
 import { pricing as defaultPricing, formatPrice } from "@config/pricing";
@@ -7,9 +7,29 @@ import { fetchPricingFromSupabase } from "@lib/supabase/client";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "90-Day AI Visibility Optimisation Sprint (£6,000 + VAT)",
   description: "Turn audit findings into a coordinated programme of technical, content, authority and monitoring improvements.",
+  alternates: {
+    canonical: "/services/90-day-optimisation-sprint",
+  },
+  openGraph: {
+    title: "90-Day AI Visibility Optimisation Sprint (£6,000 + VAT)",
+    description: "Turn audit findings into a coordinated programme of technical, content, authority and monitoring improvements.",
+    url: "/services/90-day-optimisation-sprint",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "90-Day AI Visibility Optimisation Sprint (£6,000 + VAT)",
+    description: "Turn audit findings into a coordinated programme of technical, content, authority and monitoring improvements.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function SprintServicePage() {

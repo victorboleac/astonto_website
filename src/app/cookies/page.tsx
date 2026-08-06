@@ -1,9 +1,29 @@
-import React from "react";
+import type { Metadata } from "next";
 import { siteConfig } from "@config/site";
 
-export const metadata = {
-  title: "Cookie Policy | ASTONTO",
+export const metadata: Metadata = {
+  title: "Cookie Policy",
   description: "ASTONTO Cookie Policy outlining default essential-only cookie usage and privacy-first web practices.",
+  alternates: {
+    canonical: "/cookies",
+  },
+  openGraph: {
+    title: "Cookie Policy",
+    description: "ASTONTO Cookie Policy outlining default essential-only cookie usage and privacy-first web practices.",
+    url: "/cookies",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Cookie Policy",
+    description: "ASTONTO Cookie Policy outlining default essential-only cookie usage and privacy-first web practices.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function CookiesPage() {

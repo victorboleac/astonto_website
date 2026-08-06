@@ -1,4 +1,4 @@
-import React from "react";
+import type { Metadata } from "next";
 import { SectionLabel } from "@/components/SectionLabel";
 import { DarkCTA } from "@/components/DarkCTA";
 import { pricing as defaultPricing, formatPrice } from "@config/pricing";
@@ -7,9 +7,29 @@ import { fetchPricingFromSupabase } from "@lib/supabase/client";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "AI Visibility Monitoring (From £350 + VAT per month)",
   description: "Scheduled priority-prompt retesting, competitor movement checks, and Reputation Risk alerts following an audit or sprint.",
+  alternates: {
+    canonical: "/services/monitoring",
+  },
+  openGraph: {
+    title: "AI Visibility Monitoring (From £350 + VAT per month)",
+    description: "Scheduled priority-prompt retesting, competitor movement checks, and Reputation Risk alerts following an audit or sprint.",
+    url: "/services/monitoring",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "AI Visibility Monitoring (From £350 + VAT per month)",
+    description: "Scheduled priority-prompt retesting, competitor movement checks, and Reputation Risk alerts following an audit or sprint.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function MonitoringServicePage() {

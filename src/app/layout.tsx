@@ -10,21 +10,33 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "ASTONTO | Independent AI Research and AI Search Visibility",
     template: "%s | ASTONTO",
   },
   description:
     "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
-  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   openGraph: {
     title: "ASTONTO | Independent AI Research and AI Search Visibility",
     description:
       "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
-    url: siteConfig.url,
+    url: "/",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ASTONTO | Independent AI Research and AI Search Visibility",
+    description:
+      "ASTONTO studies how AI systems interpret information, select sources and recommend businesses.",
   },
   robots: {
     index: true,
@@ -32,11 +44,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.svg",
-  },
-  alternates: {
-    types: {
-      "application/rss+xml": `${siteConfig.url}/feed.xml`,
-    },
   },
 };
 

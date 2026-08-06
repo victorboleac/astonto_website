@@ -1,9 +1,29 @@
-import React from "react";
+import type { Metadata } from "next";
 import { siteConfig } from "@config/site";
 
-export const metadata = {
-  title: "Accessibility Statement | ASTONTO",
+export const metadata: Metadata = {
+  title: "Accessibility Statement",
   description: "ASTONTO Accessibility Statement detailing WCAG 2.2 AA alignment and keyboard navigation support.",
+  alternates: {
+    canonical: "/accessibility",
+  },
+  openGraph: {
+    title: "Accessibility Statement",
+    description: "ASTONTO Accessibility Statement detailing WCAG 2.2 AA alignment and keyboard navigation support.",
+    url: "/accessibility",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Accessibility Statement",
+    description: "ASTONTO Accessibility Statement detailing WCAG 2.2 AA alignment and keyboard navigation support.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function AccessibilityPage() {

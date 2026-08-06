@@ -4,18 +4,50 @@ import Link from "next/link";
 import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { marked } from "marked";
 
+import type { Metadata } from "next";
+
 export async function generateStaticParams() {
   const items = await getAllContentAsync("comparisons");
   return items.map((a) => ({ slug: a.meta.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const item = await getContentBySlugAsync("comparisons", params.slug);
   if (!item) return {};
+  const pagePath = `/compare/${params.slug}`;
+  const isNoindex = Boolean(item.meta.noindex);
+
+  if (isNoindex) {
+    return {
+      title: item.meta.title,
+      description: item.meta.description,
+      robots: { index: false, follow: false },
+    };
+  }
+
   return {
     title: item.meta.title,
     description: item.meta.description,
-    robots: item.meta.noindex ? { index: false, follow: false } : { index: true, follow: true },
+    alternates: {
+      canonical: pagePath,
+    },
+    openGraph: {
+      title: item.meta.title,
+      description: item.meta.description,
+      url: pagePath,
+      siteName: "ASTONTO",
+      locale: "en_GB",
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: item.meta.title,
+      description: item.meta.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

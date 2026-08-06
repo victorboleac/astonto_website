@@ -1,11 +1,31 @@
-import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { getAllContentAsync } from "@lib/content";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Industry AI Visibility Guides",
   description: "Educational insights into how buyers in professional services, IT, law, and consulting evaluate vendors using AI search.",
+  alternates: {
+    canonical: "/industries",
+  },
+  openGraph: {
+    title: "Industry AI Visibility Guides",
+    description: "Educational insights into how buyers in professional services, IT, law, and consulting evaluate vendors using AI search.",
+    url: "/industries",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Industry AI Visibility Guides",
+    description: "Educational insights into how buyers in professional services, IT, law, and consulting evaluate vendors using AI search.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function IndustriesPage() {

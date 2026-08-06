@@ -5,17 +5,50 @@ import { getContentBySlugAsync, getAllContentAsync } from "@lib/content";
 import { siteConfig } from "@config/site";
 import { marked } from "marked";
 
+import type { Metadata } from "next";
+
 export async function generateStaticParams() {
   const articles = await getAllContentAsync("research");
   return articles.map((a) => ({ slug: a.meta.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const item = await getContentBySlugAsync("research", params.slug);
   if (!item) return {};
+  const pagePath = `/research/${params.slug}`;
+  const isNoindex = Boolean(item.meta.noindex);
+
+  if (isNoindex) {
+    return {
+      title: item.meta.title,
+      description: item.meta.description,
+      robots: { index: false, follow: false },
+    };
+  }
+
   return {
     title: item.meta.title,
     description: item.meta.description,
+    alternates: {
+      canonical: pagePath,
+    },
+    openGraph: {
+      title: item.meta.title,
+      description: item.meta.description,
+      url: pagePath,
+      siteName: "ASTONTO",
+      locale: "en_GB",
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: item.meta.title,
+      description: item.meta.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

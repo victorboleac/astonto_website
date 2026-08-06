@@ -1,11 +1,31 @@
-import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { getAllContentAsync } from "@lib/content";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Independent AI Research & Observational Methodology",
   description: "ASTONTO studies the observable behaviour of commercial LLMs and generative recommendation engines.",
+  alternates: {
+    canonical: "/research",
+  },
+  openGraph: {
+    title: "Independent AI Research & Observational Methodology",
+    description: "ASTONTO studies the observable behaviour of commercial LLMs and generative recommendation engines.",
+    url: "/research",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Independent AI Research & Observational Methodology",
+    description: "ASTONTO studies the observable behaviour of commercial LLMs and generative recommendation engines.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function ResearchPage() {

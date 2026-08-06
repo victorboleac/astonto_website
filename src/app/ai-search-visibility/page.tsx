@@ -1,12 +1,36 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { DarkCTA } from "@/components/DarkCTA";
 import { pricing, formatPrice } from "@config/pricing";
 
-export const metadata = {
-  title: "ASTONTO AI Search Visibility — Audit, Optimisation & Monitoring",
-  description: "Measure how ChatGPT, Gemini, Perplexity and Google AI Overviews recommend your business. Benchmark competitors and improve AI search visibility with ASTONTO.",
+export const metadata: Metadata = {
+  title: "AI Search Visibility — Audit, Optimisation & Monitoring",
+  description:
+    "Measure how ChatGPT, Gemini, Perplexity and Google AI Overviews recommend your business. Benchmark competitors and improve AI search visibility with ASTONTO.",
+  alternates: {
+    canonical: "/ai-search-visibility",
+  },
+  openGraph: {
+    title: "ASTONTO AI Search Visibility — Audit, Optimisation & Monitoring",
+    description:
+      "Measure how ChatGPT, Gemini, Perplexity and Google AI Overviews recommend your business. Benchmark competitors and improve AI search visibility with ASTONTO.",
+    url: "/ai-search-visibility",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ASTONTO AI Search Visibility",
+    description:
+      "Measure and improve how ChatGPT, Gemini, Perplexity and Google AI Overviews recommend your business.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function AISearchVisibilityPage() {

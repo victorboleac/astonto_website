@@ -1,12 +1,32 @@
-import React from "react";
+import type { Metadata } from "next";
 import { NetlifyContactForm } from "@/components/NetlifyContactForm";
 import { SectionLabel } from "@/components/SectionLabel";
 import { siteConfig } from "@config/site";
 import { getContactPageSchema } from "@lib/schema";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact ASTONTO — Book a 20-Minute AI Visibility Check",
   description: "Book an AI visibility check or submit a research inquiry to ASTONTO.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact ASTONTO — Book a 20-Minute AI Visibility Check",
+    description: "Book an AI visibility check or submit a research inquiry to ASTONTO.",
+    url: "/contact",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact ASTONTO — Book a 20-Minute AI Visibility Check",
+    description: "Book an AI visibility check or submit a research inquiry to ASTONTO.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function ContactPage() {

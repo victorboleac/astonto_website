@@ -1,4 +1,4 @@
-import React from "react";
+import type { Metadata } from "next";
 import { SectionLabel } from "@/components/SectionLabel";
 import { DarkCTA } from "@/components/DarkCTA";
 import { pricing as defaultPricing, formatPrice } from "@config/pricing";
@@ -7,9 +7,29 @@ import { fetchPricingFromSupabase } from "@lib/supabase/client";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "24-Hour AI Visibility Audit (£950 + VAT)",
   description: "Understand how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your business compared with four competitors.",
+  alternates: {
+    canonical: "/services/ai-visibility-audit",
+  },
+  openGraph: {
+    title: "24-Hour AI Visibility Audit (£950 + VAT)",
+    description: "Understand how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your business compared with four competitors.",
+    url: "/services/ai-visibility-audit",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "24-Hour AI Visibility Audit (£950 + VAT)",
+    description: "Understand how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your business compared with four competitors.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function AuditServicePage() {

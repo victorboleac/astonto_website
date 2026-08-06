@@ -1,4 +1,4 @@
-import React from "react";
+import type { Metadata } from "next";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionLabel } from "@/components/SectionLabel";
 import { faqItems as defaultFaqItems } from "@content/faqData";
@@ -8,9 +8,29 @@ import { fetchFaqsFromSupabase } from "@lib/supabase/client";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description: "Direct, answer-ready explanations of ASTONTO research, AI Search Visibility audits, PULSE Method, services, and pricing.",
+  alternates: {
+    canonical: "/faq",
+  },
+  openGraph: {
+    title: "Frequently Asked Questions",
+    description: "Direct, answer-ready explanations of ASTONTO research, AI Search Visibility audits, PULSE Method, services, and pricing.",
+    url: "/faq",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Frequently Asked Questions",
+    description: "Direct, answer-ready explanations of ASTONTO research, AI Search Visibility audits, PULSE Method, services, and pricing.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function FAQPage() {

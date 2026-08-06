@@ -1,10 +1,30 @@
-import React from "react";
+import type { Metadata } from "next";
 import { PULSEDiagram } from "@/components/PULSEDiagram";
 import { SectionLabel } from "@/components/SectionLabel";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "PULSE Method v1.0 — Methodology Specification",
   description: "PULSE Method v1.0 is ASTONTO's transparent evaluation framework for calculating AI search recommendation visibility.",
+  alternates: {
+    canonical: "/pulse-method",
+  },
+  openGraph: {
+    title: "PULSE Method v1.0 — Methodology Specification",
+    description: "PULSE Method v1.0 is ASTONTO's transparent evaluation framework for calculating AI search recommendation visibility.",
+    url: "/pulse-method",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "PULSE Method v1.0 — Methodology Specification",
+    description: "PULSE Method v1.0 is ASTONTO's transparent evaluation framework for calculating AI search recommendation visibility.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PULSEMethodPage() {

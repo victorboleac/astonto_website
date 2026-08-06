@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AbstractVisual } from "@/components/AbstractVisual";
 import { ResearchIndex } from "@/components/ResearchIndex";
@@ -12,6 +13,34 @@ import { fetchFaqsFromSupabase, fetchPricingFromSupabase } from "@lib/supabase/c
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: "Independent AI Research and AI Search Visibility",
+  description:
+    "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "ASTONTO | Independent AI Research and AI Search Visibility",
+    description:
+      "ASTONTO studies how AI systems interpret information, select sources and recommend businesses. Our AI Search Visibility audits, optimisation sprints and monitoring use the PULSE Method.",
+    url: "/",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ASTONTO | Independent AI Research and AI Search Visibility",
+    description:
+      "ASTONTO studies how AI systems interpret information, select sources and recommend businesses.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function HomePage() {
   const supabaseFaqs = await fetchFaqsFromSupabase();

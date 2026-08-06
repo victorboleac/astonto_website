@@ -1,9 +1,29 @@
-import React from "react";
+import type { Metadata } from "next";
 import { siteConfig } from "@config/site";
 
-export const metadata = {
-  title: "Terms of Use | ASTONTO",
+export const metadata: Metadata = {
+  title: "Terms of Use",
   description: "ASTONTO Terms of Use governing website access, research content citations, intellectual property, and liability limits.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Use",
+    description: "ASTONTO Terms of Use governing website access, research content citations, intellectual property, and liability limits.",
+    url: "/terms",
+    siteName: "ASTONTO",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Use",
+    description: "ASTONTO Terms of Use governing website access, research content citations, intellectual property, and liability limits.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function TermsPage() {
