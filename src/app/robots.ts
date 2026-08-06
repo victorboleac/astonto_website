@@ -7,11 +7,24 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/_next/"],
+        disallow: ["/api/", "/admin/"],
       },
-      // Editable AI crawler directives
       {
-        userAgent: ["GPTBot", "ChatGPT-User", "PerplexityBot", "Google-Extended", "AnthropicBot"],
+        userAgent: [
+          "Googlebot",
+          "Bingbot",
+          "OAI-SearchBot",
+          "GPTBot",
+          "ChatGPT-User",
+          "PerplexityBot",
+          "Perplexity-User",
+          "ClaudeBot",
+          "Claude-User",
+          "Claude-SearchBot",
+          "Applebot",
+          "Applebot-Extended",
+          "Google-Extended",
+        ],
         allow: "/",
       },
     ],

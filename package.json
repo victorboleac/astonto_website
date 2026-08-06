@@ -11,7 +11,9 @@
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "generate-llms": "tsx scripts/generate-llms-full.ts",
-    "submit-indexnow": "tsx scripts/submit-indexnow.ts"
+    "submit-indexnow": "tsx scripts/submit-indexnow.ts",
+    "indexnow:submit": "tsx scripts/submit-indexnow.ts",
+    "audit:seo": "tsx scripts/audit-seo.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

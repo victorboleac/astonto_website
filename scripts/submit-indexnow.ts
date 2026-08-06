@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const KEY = "dc8fd8bb334f4634b011991fbe8db121";
+const isDryRun = process.argv.includes("--dry-run");
 
 const staticPaths = [
   "",
@@ -24,7 +25,6 @@ const staticPaths = [
   "/accessibility",
 ];
 
-// Helper to collect markdown content slugs
 function getSlugsFromDir(type: string): string[] {
   const dirPath = path.join(process.cwd(), "content", type);
   if (!fs.existsSync(dirPath)) return [];
@@ -32,6 +32,18 @@ function getSlugsFromDir(type: string): string[] {
     .readdirSync(dirPath)
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""));
+}
+
+function isValidProductionUrl(urlStr: string): boolean {
+  try {
+    const url = new URL(urlStr);
+    if (url.protocol !== "https:") return false;
+    if (url.hostname !== "astonto.com" && url.hostname !== "www.astonto.com") return false;
+    if (url.pathname.startsWith("/admin") || url.pathname.startsWith("/api")) return false;
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function submitForHost(host: string) {
@@ -51,9 +63,10 @@ async function submitForHost(host: string) {
   ];
 
   const allPaths = Array.from(new Set([...staticPaths, ...articlePaths]));
-  const urlList = allPaths.map((p) => `https://${host}${p}`);
+  const rawUrls = allPaths.map((p) => `https://${host}${p}`);
+  const urlList = rawUrls.filter(isValidProductionUrl);
 
-  console.log(`📌 Found ${urlList.length} total URLs for ${host}.`);
+  console.log(`📌 Validated ${urlList.length} canonical URLs for ${host}.`);
 
   const payload = {
     host,
@@ -61,6 +74,12 @@ async function submitForHost(host: string) {
     keyLocation: `https://${host}/${KEY}.txt`,
     urlList,
   };
+
+  if (isDryRun) {
+    console.log(`🧪 [DRY RUN] Would submit payload to IndexNow endpoints:`);
+    console.log(JSON.stringify(payload, null, 2));
+    return;
+  }
 
   const endpoints = [
     "https://api.indexnow.org/indexnow",
@@ -92,9 +111,12 @@ async function submitForHost(host: string) {
 }
 
 async function runAllSubmissions() {
+  if (isDryRun) {
+    console.log("🧪 DRY RUN MODE ENABLED — No network requests will be dispatched.");
+  }
   await submitForHost("astonto.com");
   await submitForHost("www.astonto.com");
-  console.log(`\n🎉 IndexNow submission cycle completed for both astonto.com and www.astonto.com!`);
+  console.log(`\n🎉 IndexNow submission process completed.`);
 }
 
 runAllSubmissions();

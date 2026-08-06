@@ -1,0 +1,6 @@
+# ASTONTO Netlify 301 Canonical Redirects
+# Force HTTP and WWW variants to https://astonto.com/
+
+http://astonto.com/*        https://astonto.com/:splat  301!
+http://www.astonto.com/*     https://astonto.com/:splat  301!
+https://www.astonto.com/*    https://astonto.com/:splat  301!

@@ -4,12 +4,26 @@ import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+import { initUTMAttribution, UTMData } from "@lib/analytics/utm";
+
 function FormContent() {
   const searchParams = useSearchParams();
   const serviceParam = searchParams.get("service");
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [utmData, setUtmData] = useState<UTMData>({
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
+    utm_content: "",
+    utm_term: "",
+    original_landing_page: "",
+    current_landing_page: "",
+    referrer: "",
+    first_visit_timestamp: "",
+  });
+
   const [formData, setFormData] = useState({
     fullName: "",
     workEmail: "",
@@ -26,6 +40,9 @@ function FormContent() {
   });
 
   useEffect(() => {
+    const utm = initUTMAttribution();
+    setUtmData(utm);
+
     if (serviceParam === "audit") {
       setFormData((prev) => ({ ...prev, serviceInterest: "24-Hour AI Visibility Audit" }));
     } else if (serviceParam === "sprint") {
@@ -116,6 +133,15 @@ function FormContent() {
       className="bg-surface border border-line rounded-2xl p-6 sm:p-8 space-y-6 shadow-md"
     >
       <input type="hidden" name="form-name" value="astonto-contact" />
+      <input type="hidden" name="utm_source" value={utmData.utm_source} />
+      <input type="hidden" name="utm_medium" value={utmData.utm_medium} />
+      <input type="hidden" name="utm_campaign" value={utmData.utm_campaign} />
+      <input type="hidden" name="utm_content" value={utmData.utm_content} />
+      <input type="hidden" name="utm_term" value={utmData.utm_term} />
+      <input type="hidden" name="original_landing_page" value={utmData.original_landing_page} />
+      <input type="hidden" name="current_landing_page" value={utmData.current_landing_page} />
+      <input type="hidden" name="referrer" value={utmData.referrer} />
+      <input type="hidden" name="first_visit_timestamp" value={utmData.first_visit_timestamp} />
       
       {/* Honeypot Spam Prevention */}
       <p className="hidden">

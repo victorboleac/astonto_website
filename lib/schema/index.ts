@@ -43,6 +43,21 @@ export function getWebSiteSchema() {
   };
 }
 
+export function getAnswerSignalSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/#answersignal`,
+    name: "AnswerSignal",
+    serviceType: "AI Search Visibility Measurement & Optimisation",
+    provider: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    description: "AnswerSignal is ASTONTO's AI Search Visibility product/service measuring and improving company recommendations across AI search engines.",
+    url: `${siteConfig.url}/answer-signal`,
+  };
+}
+
 export function getWebPageSchema(name: string, description: string, path: string) {
   const url = `${siteConfig.url}${path}`;
   return {

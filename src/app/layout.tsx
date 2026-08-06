@@ -11,14 +11,16 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrai
 
 export const metadata: Metadata = {
   title: {
-    default: "ASTONTO — Independent AI Research & AnswerSignal Visibility",
+    default: "ASTONTO | Independent AI Research and AI Search Visibility",
     template: "%s | ASTONTO",
   },
-  description: siteConfig.description,
+  description:
+    "ASTONTO researches how AI systems interpret, compare and recommend organisations. AnswerSignal measures and improves AI Search Visibility across major AI platforms.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
-    title: "ASTONTO — Independent AI Research Company",
-    description: siteConfig.description,
+    title: "ASTONTO | Independent AI Research and AI Search Visibility",
+    description:
+      "ASTONTO researches how AI systems interpret, compare and recommend organisations. AnswerSignal measures and improves AI Search Visibility across major AI platforms.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -31,6 +33,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -42,8 +49,9 @@ export default function RootLayout({
   const websiteSchema = getWebSiteSchema();
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en-GB" className={`${inter.variable} ${jetbrains.variable}`}>
       <head>
+        <link rel="alternate" type="application/rss+xml" title="ASTONTO Research & Insights Feed" href={`${siteConfig.url}/feed.xml`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
