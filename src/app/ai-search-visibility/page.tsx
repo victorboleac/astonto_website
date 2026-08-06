@@ -6,7 +6,7 @@ import { pricing, formatPrice } from "@config/pricing";
 
 export const metadata = {
   title: "ASTONTO AI Search Visibility — Audit, Optimisation & Monitoring",
-  description: "ASTONTO measures how ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your company compared with four selected competitors.",
+  description: "Measure how ChatGPT, Gemini, Perplexity and Google AI Overviews recommend your business. Benchmark competitors and improve AI search visibility with ASTONTO.",
 };
 
 export default function AISearchVisibilityPage() {
