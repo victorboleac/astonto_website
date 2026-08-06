@@ -26,9 +26,9 @@ LinkedIn: ${siteConfig.social.linkedin}
 
 ---
 
-## 2. AnswerSignal Product & Methodology
+## 2. ASTONTO AI Search Visibility Services & Methodology
 
-AnswerSignal is ASTONTO's applied AI Search Visibility service. It measures how AI platforms recommend a company compared with four selected competitors using the PULSE Method v1.0.
+ASTONTO AI Search Visibility measures how AI platforms recommend a company compared with four selected competitors using the PULSE Method v1.0.
 
 Core Formula:
 Prompt Result Score = Position Factor × Recommendation Factor × Sentiment Factor
@@ -64,7 +64,7 @@ Answer: ${item.answer}
 
 - Home: ${siteConfig.url}/
 - Research: ${siteConfig.url}/research
-- AnswerSignal: ${siteConfig.url}/answer-signal
+- AI Search Visibility: ${siteConfig.url}/ai-search-visibility
 - PULSE Method: ${siteConfig.url}/pulse-method
 - Audit Service: ${siteConfig.url}/services/ai-visibility-audit
 - Sprint Service: ${siteConfig.url}/services/90-day-optimisation-sprint

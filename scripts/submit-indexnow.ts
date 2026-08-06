@@ -7,7 +7,7 @@ const isDryRun = process.argv.includes("--dry-run");
 const staticPaths = [
   "",
   "/research",
-  "/answer-signal",
+  "/ai-search-visibility",
   "/pulse-method",
   "/services/ai-visibility-audit",
   "/services/90-day-optimisation-sprint",

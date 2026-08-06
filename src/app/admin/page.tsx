@@ -628,7 +628,7 @@ export default function AdminPage() {
                     id: `q_${Date.now()}`,
                     question: "New FAQ Question?",
                     answer: "Comprehensive answer description...",
-                    category: "AnswerSignal",
+                    category: "AI Search Visibility",
                     sort_order: faqs.length + 1,
                     is_published: true,
                   })
@@ -685,12 +685,12 @@ export default function AdminPage() {
                   <div>
                     <label className="block mb-1">Category</label>
                     <select
-                      value={selectedFaq.category || "AnswerSignal"}
+                      value={selectedFaq.category || "AI Search Visibility"}
                       onChange={(e) => setSelectedFaq({ ...selectedFaq, category: e.target.value })}
                       className="w-full px-3 py-2 rounded-lg bg-surface-soft border border-line"
                     >
                       <option value="ASTONTO">ASTONTO</option>
-                      <option value="AnswerSignal">AnswerSignal</option>
+                      <option value="AI Search Visibility">AI Search Visibility</option>
                       <option value="PULSE">PULSE Method</option>
                       <option value="Services and pricing">Services and pricing</option>
                       <option value="General">General</option>

@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export const metadata = {
-  title: "Services & Pricing Overview — ASTONTO & AnswerSignal",
+  title: "Services & Pricing Overview | ASTONTO",
   description: "Official public pricing for 20-Minute Check (Free), 24-Hour Audit (£950+VAT), 90-Day Sprint (£6,000+VAT), and Monitoring (From £350/mo+VAT).",
 };
 

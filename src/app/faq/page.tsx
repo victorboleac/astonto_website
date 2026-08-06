@@ -10,7 +10,7 @@ export const revalidate = 0;
 
 export const metadata = {
   title: "Frequently Asked Questions",
-  description: "Direct, answer-ready explanations of ASTONTO research, AnswerSignal audits, PULSE Method, services, and pricing.",
+  description: "Direct, answer-ready explanations of ASTONTO research, AI Search Visibility audits, PULSE Method, services, and pricing.",
 };
 
 export default async function FAQPage() {
@@ -20,7 +20,7 @@ export default async function FAQPage() {
         id: f.id,
         question: f.question,
         answer: f.answer,
-        category: f.category,
+        category: f.category !== "ASTONTO" && f.category !== "PULSE" && f.category !== "Services and pricing" ? "AI Search Visibility" : f.category,
       }))
     : defaultFaqItems;
 
@@ -28,7 +28,7 @@ export default async function FAQPage() {
     faqItems.map((f: any) => ({ question: f.question, answer: f.answer }))
   );
 
-  const categories = ["ASTONTO", "AnswerSignal", "PULSE", "Services and pricing"] as const;
+  const categories = ["ASTONTO", "AI Search Visibility", "PULSE", "Services and pricing"] as const;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">

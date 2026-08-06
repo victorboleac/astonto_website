@@ -65,11 +65,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: AnswerSignal & Services */}
+          {/* Column 3: AI Search Visibility & Services */}
           <div>
-            <h3 className="text-xs font-mono font-bold text-navy uppercase tracking-wider mb-4">AnswerSignal</h3>
+            <h3 className="text-xs font-mono font-bold text-navy uppercase tracking-wider mb-4">AI Search Visibility</h3>
             <ul className="space-y-2.5">
-              {footerNav.answerSignal.map((item) => (
+              {footerNav.aiSearchVisibility.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="hover:text-cyan-deep transition-colors">
                     {item.label}

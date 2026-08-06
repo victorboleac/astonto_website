@@ -34,7 +34,7 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ASTONTO — Independent AI Research &amp; AnswerSignal Insights</title>
+    <title>ASTONTO — Independent AI Research &amp; AI Search Visibility Insights</title>
     <link>${baseUrl}</link>
     <description>${siteConfig.description}</description>
     <language>en-gb</language>

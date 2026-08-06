@@ -40,7 +40,7 @@ export default async function IndustryDetailPage({ params }: { params: { slug: s
       />
 
       <div className="p-8 rounded-2xl bg-surface border border-line shadow-sm space-y-4">
-        <h2 className="text-xl font-bold text-navy">What an AnswerSignal Audit Measures in This Category</h2>
+        <h2 className="text-xl font-bold text-navy">What an ASTONTO AI Visibility Audit Measures in This Category</h2>
         <ul className="space-y-2.5 text-xs sm:text-sm text-ink-soft">
           <li>• Category buyer prompt coverage across 4 AI platforms.</li>
           <li>• Entity resolution clarity and canonical address/office verification.</li>

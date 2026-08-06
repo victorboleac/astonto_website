@@ -25,7 +25,7 @@ export default function TermsPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-navy">2. Observational AI Research &amp; Scope</h2>
           <p>
-            ASTONTO provides independent observational research, benchmarks, and AI Search Visibility services (including AnswerSignal, the PULSE Method, and 24-Hour AI Visibility Audits).
+            ASTONTO provides independent observational research, benchmarks, and AI Search Visibility services (including the PULSE Method, 24-Hour AI Visibility Audits, 90-Day Optimisation Sprints, and AI Visibility Monitoring).
           </p>
           <p>
             Our findings are based on black-box evaluation of observable output behavior across third-party artificial intelligence engines (such as ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews). Because third-party AI models undergo independent updates, ASTONTO does not guarantee specific rankings, citations, or placement outcomes.

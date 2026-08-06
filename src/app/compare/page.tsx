@@ -4,8 +4,8 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { getAllContentAsync } from "@lib/content";
 
 export const metadata = {
-  title: "Educational Comparisons Hub",
-  description: "Comparing AnswerSignal and PULSE Method with conventional SEO tools and mention-tracking utilities.",
+  title: "Educational Comparisons Hub | ASTONTO",
+  description: "Comparing ASTONTO AI Search Visibility and the PULSE Method with conventional SEO tools and mention-tracking utilities.",
 };
 
 export default async function CompareHubPage() {

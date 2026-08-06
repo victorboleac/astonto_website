@@ -18,14 +18,16 @@ function logWarn(msg: string) {
 
 async function runSeoAudit() {
   console.log("==================================================");
-  console.log("🔍 ASTONTO Automated Technical SEO & GEO Audit");
+  console.log("🔍 ASTONTO Automated Technical SEO & Brand Audit");
   console.log("==================================================\n");
 
   const cwd = process.cwd();
 
-  // 1. Audit Legacy Obsolete References (Miami, PRISM, AVI, Estate Agents)
-  console.log("1. Checking for Obsolete Legacy References (Miami, PRISM, AVI, Estate Agents)...");
+  // 1. Audit Forbidden Brand & Obsolete References (AnswerSignal, Miami, PRISM, AVI, Estate Agents)
+  console.log("1. Checking for Forbidden & Obsolete References (AnswerSignal, Miami, PRISM, AVI, Estate Agents)...");
   const forbiddenPatterns = [
+    /\bAnswerSignal\b/i,
+    /\bAnswer Signal\b/i,
     /\bMiami\b/i,
     /\bPRISM™?\b/,
     /\bAVI™?\b/,
@@ -48,8 +50,14 @@ async function runSeoAudit() {
         const content = fs.readFileSync(fullPath, "utf-8");
         for (const pattern of forbiddenPatterns) {
           if (pattern.test(content)) {
-            // Exclude false positives in audit-seo.ts or seed sql if intentional
-            if (fullPath.includes("scripts/audit-seo.ts")) continue;
+            // Exclude false positives in audit-seo.ts, migration sql, or docs migration logs if intentional
+            if (
+              fullPath.includes("scripts/audit-seo.ts") ||
+              fullPath.includes("supabase/migrations/") ||
+              fullPath.includes("docs/brand-migration-astonto.md")
+            ) {
+              continue;
+            }
             results.push({ file: fullPath.replace(cwd, ""), match: pattern.toString() });
           }
         }
@@ -58,15 +66,17 @@ async function runSeoAudit() {
     return results;
   }
 
-  const legacyMatches = searchFilesRecursively(path.join(cwd, "src"))
+  const forbiddenMatches = searchFilesRecursively(path.join(cwd, "src"))
     .concat(searchFilesRecursively(path.join(cwd, "public")))
-    .concat(searchFilesRecursively(path.join(cwd, "content")));
+    .concat(searchFilesRecursively(path.join(cwd, "content")))
+    .concat(searchFilesRecursively(path.join(cwd, "config")))
+    .concat(searchFilesRecursively(path.join(cwd, "lib")));
 
-  if (legacyMatches.length === 0) {
-    logPass("No obsolete references (Miami, PRISM, AVI, Estate Agents) found in source/content.");
+  if (forbiddenMatches.length === 0) {
+    logPass("No forbidden terms (AnswerSignal, Miami, PRISM, AVI, Estate Agents) found in customer-facing source code/content.");
   } else {
-    for (const match of legacyMatches) {
-      logFail(`Obsolete term match found in ${match.file} (pattern: ${match.match})`);
+    for (const match of forbiddenMatches) {
+      logFail(`Forbidden term match found in ${match.file} (pattern: ${match.match})`);
     }
   }
 
@@ -152,30 +162,31 @@ async function runSeoAudit() {
     if (
       schemaCode.includes("getOrganizationSchema") &&
       schemaCode.includes("getWebSiteSchema") &&
-      schemaCode.includes("getAnswerSignalSchema") &&
+      schemaCode.includes("getAISearchVisibilityServiceSchema") &&
       schemaCode.includes("getServiceSchema") &&
       schemaCode.includes("getFAQSchema") &&
       schemaCode.includes("getArticleSchema")
     ) {
-      logPass("lib/schema/index.ts exports all required structured data schemas.");
+      logPass("lib/schema/index.ts exports all required structured data schemas under ASTONTO architecture.");
     } else {
       logFail("lib/schema/index.ts is missing required JSON-LD schema functions.");
     }
   }
 
-  // 6. Audit Netlify 301 Canonical Redirects
-  console.log("\n6. Auditing Netlify Canonical Redirect Rules...");
+  // 6. Audit Netlify 301 Canonical & Route Redirects
+  console.log("\n6. Auditing Netlify Canonical & Route Redirect Rules...");
   const redirectsPath = path.join(cwd, "public/_redirects");
   if (fs.existsSync(redirectsPath)) {
     const redirectsText = fs.readFileSync(redirectsPath, "utf-8");
     if (
       redirectsText.includes("http://astonto.com/*") &&
       redirectsText.includes("http://www.astonto.com/*") &&
-      redirectsText.includes("https://www.astonto.com/*")
+      redirectsText.includes("https://www.astonto.com/*") &&
+      redirectsText.includes("/answer-signal")
     ) {
-      logPass("public/_redirects correctly enforces 301 canonical redirects to https://astonto.com/");
+      logPass("public/_redirects correctly enforces 301 canonical and AnswerSignal route redirects.");
     } else {
-      logFail("public/_redirects missing canonical 301 rules.");
+      logFail("public/_redirects missing canonical or route 301 rules.");
     }
   }
 
@@ -184,7 +195,7 @@ async function runSeoAudit() {
     console.error("❌ SEO AUDIT FAILED — Fix the technical errors listed above.");
     process.exit(1);
   } else {
-    console.log("🎉 ALL TECHNICAL SEO & GEO AUDIT CHECKS PASSED!");
+    console.log("🎉 ALL TECHNICAL SEO & BRAND AUDIT CHECKS PASSED!");
     process.exit(0);
   }
 }
