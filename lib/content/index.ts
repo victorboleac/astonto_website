@@ -96,20 +96,16 @@ export async function getContentBySlugAsync(
     };
   }
 
-  // If Supabase is active and connected, but returned null, the article does not exist (e.g. deleted)
-  if (isSupabaseConnected()) {
-    return null;
-  }
-
   return getContentBySlug(type, slug);
 }
 
 export async function getAllContentAsync(
   type: "research" | "resources" | "industries" | "comparisons"
 ): Promise<ContentItem[]> {
+  const localItems = getAllContent(type);
   const supabaseRows = await fetchArticlesFromSupabase(type);
-  if (supabaseRows !== null) {
-    return supabaseRows.map((row: any) => ({
+  if (supabaseRows !== null && supabaseRows.length > 0) {
+    const supabaseItems = supabaseRows.map((row: any) => ({
       meta: {
         slug: row.slug,
         title: row.title,
@@ -129,6 +125,15 @@ export async function getAllContentAsync(
       } as ContentMeta,
       content: row.content_markdown || "",
     }));
+
+    const map = new Map<string, ContentItem>();
+    for (const item of localItems) {
+      map.set(item.meta.slug, item);
+    }
+    for (const item of supabaseItems) {
+      map.set(item.meta.slug, item);
+    }
+    return Array.from(map.values());
   }
-  return getAllContent(type);
+  return localItems;
 }
