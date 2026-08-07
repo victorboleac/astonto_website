@@ -2,6 +2,9 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@config/site";
 import { getAllContentAsync } from "@lib/content";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
 
