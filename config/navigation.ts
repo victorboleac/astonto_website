@@ -28,6 +28,7 @@ export const footerNav = {
   ],
   research: [
     { label: "Research Overview", href: "/research" },
+    { label: "Managed IT Manchester Study", href: "/research/ai-visibility-managed-it-greater-manchester" },
     { label: "PULSE Methodology", href: "/pulse-method" },
     { label: "Educational Notes", href: "/resources" },
     { label: "Citation Policy", href: "/research#citation" },

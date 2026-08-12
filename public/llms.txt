@@ -5,6 +5,7 @@
 ## Core Information & Service Pages
 
 - [ASTONTO Research Hub](https://astonto.com/research): Observational framework and empirical black-box testing methodology for commercial LLMs.
+- [How AI Recommends Managed IT Providers in Greater Manchester](https://astonto.com/research/ai-visibility-managed-it-greater-manchester): ASTONTO study of 12 buyer questions across ChatGPT, Perplexity, Gemini and Google AI Overviews. 144 observed responses. PULSE Method v1.0. Reliability: Indicative.
 - [ASTONTO AI Search Visibility](https://astonto.com/ai-search-visibility): Commercial service measuring brand representation across ChatGPT, Perplexity, Gemini, and Google AI Overviews vs 4 competitors.
 - [PULSE Method v1.0 Specification](https://astonto.com/pulse-method): Public mathematical formula specification for calculating position factor, recommendation class, and sentiment.
 

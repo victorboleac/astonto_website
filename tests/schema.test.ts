@@ -7,6 +7,8 @@ import {
   getServiceSchema,
   getFAQSchema,
   getContactPageSchema,
+  getReportSchema,
+  getDatasetSchema,
 } from "../lib/schema";
 
 describe("JSON-LD Structured Data Generators", () => {
@@ -51,4 +53,34 @@ describe("JSON-LD Structured Data Generators", () => {
     expect(schema.mainEntity).toHaveLength(1);
     expect(schema.mainEntity[0].name).toBe("What is ASTONTO?");
   });
+
+  it("should generate valid Report schema", () => {
+    const schema = getReportSchema({
+      title: "How AI Recommends Managed IT Providers in Greater Manchester",
+      description: "ASTONTO research analysing 144 AI-generated buyer answers",
+      url: "/research/ai-visibility-managed-it-greater-manchester",
+      publishedAt: "2026-08-01",
+      author: "ASTONTO Research",
+      spatialCoverage: "Greater Manchester, United Kingdom",
+      inLanguage: "en-GB",
+    });
+    expect(schema["@type"]).toBe("Report");
+    expect(schema.headline).toBe("How AI Recommends Managed IT Providers in Greater Manchester");
+    expect(schema.publisher["@id"]).toContain("#organization");
+  });
+
+  it("should generate valid Dataset schema", () => {
+    const schema = getDatasetSchema({
+      name: "ASTONTO Managed IT Greater Manchester AI Visibility Study 2026",
+      description: "144 observed AI responses",
+      temporalCoverage: "2026-07-31/2026-08-01",
+      spatialCoverage: "Greater Manchester, United Kingdom",
+      creator: "ASTONTO Research",
+      variableMeasured: ["PULSE Score", "Appearance Rate"],
+      measurementTechnique: "PULSE Method v1.0",
+    });
+    expect(schema["@type"]).toBe("Dataset");
+    expect(schema.name).toContain("ASTONTO Managed IT");
+  });
 });
+

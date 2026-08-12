@@ -182,3 +182,78 @@ export function getContactPageSchema() {
     },
   };
 }
+
+export function getReportSchema(report: {
+  title: string;
+  description: string;
+  url: string;
+  publishedAt: string;
+  modifiedAt?: string;
+  author: string;
+  spatialCoverage: string;
+  inLanguage: string;
+}) {
+  const fullUrl = report.url.startsWith("http") ? report.url : `${siteConfig.url}${report.url}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Report",
+    "@id": `${fullUrl}/#report`,
+    headline: report.title,
+    description: report.description,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": fullUrl,
+    },
+    author: {
+      "@type": "Organization",
+      name: report.author || siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    datePublished: report.publishedAt,
+    dateModified: report.modifiedAt || report.publishedAt,
+    about: [
+      { "@type": "Thing", name: "AI Search Visibility" },
+      { "@type": "Thing", name: "Managed IT services" },
+      { "@type": "Thing", name: "Greater Manchester" },
+      { "@type": "Thing", name: "Artificial intelligence recommendation systems" },
+    ],
+    spatialCoverage: {
+      "@type": "Place",
+      name: report.spatialCoverage,
+    },
+    inLanguage: report.inLanguage,
+  };
+}
+
+export function getDatasetSchema(dataset: {
+  name: string;
+  description: string;
+  temporalCoverage: string;
+  spatialCoverage: string;
+  creator: string;
+  variableMeasured: string[];
+  measurementTechnique: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: dataset.name,
+    description: dataset.description,
+    creator: {
+      "@type": "Organization",
+      name: dataset.creator,
+      url: siteConfig.url,
+    },
+    temporalCoverage: dataset.temporalCoverage,
+    spatialCoverage: {
+      "@type": "Place",
+      name: dataset.spatialCoverage,
+    },
+    variableMeasured: dataset.variableMeasured,
+    measurementTechnique: dataset.measurementTechnique,
+  };
+}
+

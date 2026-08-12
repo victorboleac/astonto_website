@@ -37,7 +37,24 @@ Reliability Levels: High, Medium, Indicative.
 
 ---
 
-## 3. Official Services & Public Pricing Structure
+## 3. Industry Research Studies
+
+### How AI Recommends Managed IT Providers in Greater Manchester
+- URL: ${siteConfig.url}/research/ai-visibility-managed-it-greater-manchester
+- Executive Summary: ASTONTO study analysing 144 observed AI answers across ChatGPT, Perplexity, Gemini and Google AI Overviews for 12 commercial buyer questions. The study revealed that AI recommendation visibility in Greater Manchester is highly concentrated and platform-dependent.
+- Methodology: PULSE Method v1.0 (12 buyer prompts × 4 platforms × 3 repeated runs).
+- Reliability: Indicative (fewer than 50 unique prompts).
+- Selected 5-Company Benchmark Results:
+  1. Apex Computing Services: Benchmark 33.56 | Share of Voice 43.47% | Appearance 50.00%
+  2. BCN Group: Benchmark 16.48 | Share of Voice 21.34% | Appearance 29.17%
+  3. Foresight IT Services: Benchmark 15.16 | Share of Voice 19.64% | Appearance 27.08%
+  4. NetMonkeys: Benchmark 7.21 | Share of Voice 9.34% | Appearance 15.97%
+  5. Manchester IT: Benchmark 4.80 | Share of Voice 6.21% | Appearance 9.03%
+- Limitations: Measures observed AI recommendation behaviour within tested parameters; does not measure real-world service quality, customer satisfaction, or internal model weights.
+
+---
+
+## 4. Official Services & Public Pricing Structure
 
 - 20-Minute AI Visibility Check: Free
 - 24-Hour AI Visibility Audit: ${formatPrice(pricing.audit.price)} (${pricing.audit.billingLabel})
@@ -46,7 +63,7 @@ Reliability Levels: High, Medium, Indicative.
 
 ---
 
-## 4. Approved FAQ Knowledge Base
+## 5. Approved FAQ Knowledge Base
 
 ${faqItems
   .map(
@@ -60,7 +77,7 @@ Answer: ${item.answer}
 
 ---
 
-## 5. Official Canonical Links
+## 6. Official Canonical Links
 
 - Home: ${siteConfig.url}/
 - Research: ${siteConfig.url}/research

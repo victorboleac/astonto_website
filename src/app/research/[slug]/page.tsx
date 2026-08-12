@@ -9,7 +9,9 @@ import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const articles = await getAllContentAsync("research");
-  return articles.map((a) => ({ slug: a.meta.slug }));
+  return articles
+    .filter((a) => a.meta.slug !== "ai-visibility-managed-it-greater-manchester")
+    .map((a) => ({ slug: a.meta.slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
