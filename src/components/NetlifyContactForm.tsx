@@ -64,7 +64,7 @@ function FormContent() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.botField) {
       setSubmitted(true);
@@ -89,16 +89,36 @@ function FormContent() {
     const form = e.target as HTMLFormElement;
     const body = new URLSearchParams(new FormData(form) as any).toString();
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
-    })
-      .then(() => setSubmitted(true))
-      .catch((err) => {
-        console.error("Form submission error:", err);
-        setError("An error occurred submitting the form. Please try again or call +44 7845 580266.");
+    try {
+      // 1. Submit to Netlify static form handler target /__forms.html
+      let res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
       });
+
+      // 2. Fallback to Next.js API route if Netlify form handler is not available (e.g. local dev / non-Netlify environment)
+      if (!res.ok) {
+        res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+        });
+      }
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const errorData = await res.json().catch(() => null);
+        setError(
+          errorData?.error ||
+            `An error occurred submitting the form (${res.status}). Please try again or call +44 7845 580266.`
+        );
+      }
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setError("An error occurred submitting the form. Please try again or call +44 7845 580266.");
+    }
   };
 
   if (submitted) {
@@ -127,6 +147,7 @@ function FormContent() {
     <form
       name="astonto-contact"
       method="POST"
+      action="/__forms.html"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
